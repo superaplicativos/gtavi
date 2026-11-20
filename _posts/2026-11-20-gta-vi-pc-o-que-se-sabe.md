@@ -2,6 +2,8 @@
 title: "GTA VI no PC: existe data? O que se sabe até agora"
 date: 2026-11-20 11:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-vi-pc-o-que-se-sabe.jpg"
+cover_credit: "Imagem ilustrativa gerada por IA"
 cover_fonte: ia
 cover_prompt: "a powerful gaming PC tower with RGB lighting on a desk in a dark room, big window showing a neon tropical city at night"
 cover_text: "PC?"

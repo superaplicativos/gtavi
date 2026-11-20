@@ -10,6 +10,8 @@ galeria:
     legenda: "As ilhas do sul da Flórida, inspiração para o litoral de Leonida"
   - busca: "Everglades airboat"
     legenda: "Barcos de pântano: explore com calma"
+    src: "/assets/img/posts/dicas-iniciantes-gta-vi-2.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
 featured: true
 cover_text: "10 dicas"
 description: "Do salvamento automático que está confundindo muita gente até a melhor forma de explorar Leonida: um guia rápido para as primeiras horas."

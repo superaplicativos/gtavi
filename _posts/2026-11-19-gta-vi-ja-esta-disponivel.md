@@ -2,12 +2,16 @@
 title: "GTA VI já está disponível: horário, plataformas e como jogar pela nuvem"
 date: 2026-11-19 08:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-vi-ja-esta-disponivel.jpg"
+cover_credit: "Imagem ilustrativa gerada por IA"
 cover_fonte: foto
 imagem_busca: "Miami skyline sunset"
 cover_prompt: "panoramic Miami-like skyline at sunset seen from the water, palm trees in the foreground"
 galeria:
   - busca: "Ocean Drive Miami Beach night"
     legenda: "Ocean Drive, em Miami Beach: o DNA de Vice City"
+    src: "/assets/img/posts/gta-vi-ja-esta-disponivel-1.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
   - busca: "Brickell Miami skyline"
     legenda: "Brickell, o centro financeiro de Miami"
 featured: true

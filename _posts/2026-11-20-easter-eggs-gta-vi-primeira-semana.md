@@ -8,10 +8,14 @@ cover_prompt: "misty mangrove swamp at dusk with a tall radio tower silhouette a
 galeria:
   - busca: "radio tower Florida"
     legenda: "Torres de rádio no horizonte: na vida real e em Leonida"
+    src: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana-1.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
   - busca: "alligator Everglades"
     legenda: "Os pântanos da Flórida, inspiração da região de Cottonmouth"
   - busca: "jet ski ocean Florida"
     legenda: "Mar aberto: onde aparece o tal cachorro de jet ski"
+    src: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana-3.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
 featured: true
 cover_text: "Segredos"
 description: "Ovos de Páscoa literais no topo de uma torre, o Pé-Grande de volta com outro nome, um cachorro de jet ski e referências a outros jogos da Rockstar."

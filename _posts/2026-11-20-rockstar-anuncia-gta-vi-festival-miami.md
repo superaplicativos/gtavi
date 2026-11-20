@@ -10,6 +10,8 @@ galeria:
     legenda: "Wynwood, bairro dos murais em Miami"
   - busca: "music festival crowd night lights"
     legenda: "Clima de festival"
+    src: "/assets/img/posts/rockstar-anuncia-gta-vi-festival-miami-2.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
 cover_text: "Festival"
 description: "A celebração do lançamento acontece em 21 de novembro no Mana Wynwood, em Miami — a cidade real que inspira Vice City."
 tags: [evento, musica, miami, vice-city, trilha-sonora]
