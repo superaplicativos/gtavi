@@ -14,6 +14,9 @@ galeria:
     credito: "Imagem ilustrativa gerada por IA"
   - busca: "Brickell Miami skyline"
     legenda: "Brickell, o centro financeiro de Miami"
+    src: "/assets/img/posts/gta-vi-ja-esta-disponivel-2.jpg"
+    credito: "Foto: Rhododendrites / CC BY-SA 4.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Brickell_neighborhood_skyline_(60062p).jpg"
 featured: true
 cover_text: "Chegou"
 description: "Depois de dois adiamentos, GTA VI saiu em 19 de novembro de 2026 para PS5 e Xbox Series X|S, com liberação à meia-noite no horário local e opção de jogar no Xbox Cloud Gaming."

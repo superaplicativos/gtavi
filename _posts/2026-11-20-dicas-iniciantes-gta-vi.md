@@ -2,12 +2,18 @@
 title: "10 dicas para começar bem em GTA VI (sem spoilers)"
 date: 2026-11-20 15:00:00 -0300
 categoria: dicas
+cover: "/assets/img/posts/dicas-iniciantes-gta-vi.jpg"
+cover_credit: "Foto: Lars Plougmann from United States / CC BY-SA 2.0 via Wikimedia Commons"
+cover_credit_url: "https://commons.wikimedia.org/wiki/File:Dusk_sets_on_the_Overseas_Highway_in_Florida_Keys_(17048623682).jpg"
 cover_fonte: foto
 imagem_busca: "Overseas Highway Florida Keys"
 cover_prompt: "long bridge over turquoise sea in the Florida Keys at sunset, a sports car driving"
 galeria:
   - busca: "Florida Keys aerial"
     legenda: "As ilhas do sul da Flórida, inspiração para o litoral de Leonida"
+    src: "/assets/img/posts/dicas-iniciantes-gta-vi-1.jpg"
+    credito: "Foto: Florida Keys--Public Libraries / CC BY 2.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Aerial_of_Solares_Hill,_Key_West_Florida,_1999.jpg"
   - busca: "Everglades airboat"
     legenda: "Barcos de pântano: explore com calma"
     src: "/assets/img/posts/dicas-iniciantes-gta-vi-2.jpg"

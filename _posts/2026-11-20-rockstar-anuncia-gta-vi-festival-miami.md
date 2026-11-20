@@ -2,12 +2,18 @@
 title: "Rockstar anuncia “GTA 6: The Festival”, evento de música em Miami"
 date: 2026-11-20 09:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/rockstar-anuncia-gta-vi-festival-miami.jpg"
+cover_credit: "Foto: Dan Lundberg / CC BY-SA 2.0 via Wikimedia Commons"
+cover_credit_url: "https://commons.wikimedia.org/wiki/File:Wynwood_Walls_Miami_Florida_October_2013.jpg"
 cover_fonte: foto
 imagem_busca: "Wynwood Walls Miami"
 cover_prompt: "colorful street art murals in a Miami arts district at golden hour, music festival lights"
 galeria:
   - busca: "Wynwood mural Miami"
     legenda: "Wynwood, bairro dos murais em Miami"
+    src: "/assets/img/posts/rockstar-anuncia-gta-vi-festival-miami-1.jpg"
+    credito: "Foto: osseous / CC BY 2.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:April_7,_2015_-_Wynwood_Miami_-_03.jpg"
   - busca: "music festival crowd night lights"
     legenda: "Clima de festival"
     src: "/assets/img/posts/rockstar-anuncia-gta-vi-festival-miami-2.jpg"

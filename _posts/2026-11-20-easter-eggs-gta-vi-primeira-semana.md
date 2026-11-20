@@ -2,6 +2,9 @@
 title: "Easter eggs de GTA VI: os segredos que a comunidade já encontrou"
 date: 2026-11-20 14:00:00 -0300
 categoria: easter-eggs
+cover: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana.jpg"
+cover_credit: "Foto: European Union, Copernicus Sentinel-2 imagery / Attribution via Wikimedia Commons"
+cover_credit_url: "https://commons.wikimedia.org/wiki/File:Everglades_National_Park_on_World_Migratory_Bird_Day_(Copernicus).jpg"
 cover_fonte: foto
 imagem_busca: "Everglades mangrove swamp"
 cover_prompt: "misty mangrove swamp at dusk with a tall radio tower silhouette and a mysterious hairy creature shadow between the trees"
@@ -12,6 +15,9 @@ galeria:
     credito: "Imagem ilustrativa gerada por IA"
   - busca: "alligator Everglades"
     legenda: "Os pântanos da Flórida, inspiração da região de Cottonmouth"
+    src: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana-2.jpg"
+    credito: "Foto: Daderot / CC0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Alligators_-_Everglades_Alligator_Farm_-_Florida_City,_Florida_-_DSC09187.jpg"
   - busca: "jet ski ocean Florida"
     legenda: "Mar aberto: onde aparece o tal cachorro de jet ski"
     src: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana-3.jpg"
