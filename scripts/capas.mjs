@@ -134,6 +134,12 @@ const field = (fm, k) => {
   return m ? m[1].trim().replace(/^["']|["']$/g, "") : "";
 };
 
+// URLs listadas em `fontes:` (cada item tem `url: "..."`), na ordem em que aparecem.
+function fontesDoPost(fm) {
+  const bloco = fm.split(/^fontes:\s*$/m)[1] || "";
+  return [...bloco.matchAll(/^\s+url:\s*["']?(https?:\/\/[^"'\s]+)["']?\s*$/gm)].map((m) => m[1]);
+}
+
 async function salvar(res, nome) {
   await fs.mkdir(path.join(ROOT, OUT_DIR), { recursive: true });
   const rel = `${OUT_DIR}/${nome}.${res.ext}`;
@@ -168,14 +174,25 @@ async function imagemDaFonte({ url, pagina, nome }) {
   return { buf, ext, engine: `fonte:${host(page)}`, credit: `Imagem: ${nome || host(page)}`, creditUrl: page, fallbackReason: "" };
 }
 
-async function obter({ fonte, busca, prompt, seed, usados, origem }) {
-  if (origem && (origem.url || origem.pagina)) {
-    try { return await imagemDaFonte(origem); }
-    catch (e) {
-      const r = await obter({ fonte, busca, prompt, seed, usados });
-      r.fallbackReason = `fonte: ${e.message}${r.fallbackReason ? " | " + r.fallbackReason : ""}`;
+async function obter({ fonte, busca, prompt, seed, usados, origem, extras = [] }) {
+  // Tenta a página/imagem indicada e, se bloquear, cada uma das outras fontes da matéria.
+  const tentativas = [];
+  if (origem && (origem.url || origem.pagina)) tentativas.push(origem);
+  for (const u of extras) if (!tentativas.some((t) => t.pagina === u)) tentativas.push({ pagina: u, nome: "" });
+  const erros = [];
+  for (const t of tentativas) {
+    try {
+      const r = await imagemDaFonte(t);
+      if (usados.has(r.creditUrl)) throw new Error("imagem já usada neste post");
+      usados.add(r.creditUrl);
+      r.fallbackReason = erros.join(" | ");
       return r;
-    }
+    } catch (e) { erros.push(`${host(t.pagina || t.url)}: ${e.message}`); }
+  }
+  if (erros.length) {
+    const r = await obter({ fonte, busca, prompt, seed, usados });
+    r.fallbackReason = `fontes: ${erros.join(" | ")}${r.fallbackReason ? " | " + r.fallbackReason : ""}`;
+    return r;
   }
   if (fonte === "foto" && busca) {
     try { return await buscarFoto(busca, usados); }
@@ -207,6 +224,7 @@ async function processar(file) {
         seed: hash(slug) % 100000,
         usados,
         origem: { url: field(fm, "imagem_url"), pagina: field(fm, "imagem_pagina"), nome: field(fm, "imagem_fonte") },
+        extras: fontesDoPost(fm),
       });
       const src = await salvar(res, slug);
       const add = [`cover: ${yamlStr(src)}`, `cover_credit: ${yamlStr(res.credit)}`];

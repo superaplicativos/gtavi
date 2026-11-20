@@ -2,8 +2,6 @@
 title: "GTA VI no PC: existe data? O que se sabe até agora"
 date: 2026-11-20 11:00:00 -0300
 categoria: noticias
-cover: "/assets/img/posts/gta-vi-pc-o-que-se-sabe.jpg"
-cover_credit: "Imagem ilustrativa gerada por IA"
 imagem_pagina: "https://www.gtavice.net/news/gta-6-development-complete-future-plans-pc-release-and-more-take-two-earnings-call-roundup"
 imagem_fonte: "GTAVice.net"
 cover_fonte: ia
