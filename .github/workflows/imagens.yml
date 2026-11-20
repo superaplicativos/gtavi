@@ -1,6 +1,6 @@
 name: Imagens dos posts
 
-# Gera capas/galerias (foto livre via Openverse ou IA via Cloudflare FLUX / Pollinations)
+# Gera capas/galerias (foto livre via Wikimedia Commons ou IA via Cloudflare FLUX / Pollinations)
 # para posts que ainda não têm imagem, salva no repositório e republica o site.
 on:
   push:

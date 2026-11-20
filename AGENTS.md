@@ -63,7 +63,7 @@ Todo post precisa de imagem de verdade. **A IA não baixa imagens manualmente**:
 
 | Campo | Uso |
 |---|---|
-| `cover_fonte` | `foto` = foto REAL com licença livre (Openverse/Wikimedia/Flickr CC, uso comercial permitido, crédito automático). `ia` = imagem gerada por IA (Cloudflare FLUX, com Pollinations de reserva). |
+| `cover_fonte` | `foto` = foto REAL com licença livre (Wikimedia Commons, uso comercial permitido, crédito automático). `ia` = imagem gerada por IA (Cloudflare FLUX, com Pollinations de reserva). |
 | `imagem_busca` | Termo de busca **em inglês** para a foto real. Use locais reais que inspiram Leonida: `"Miami Beach Ocean Drive"`, `"Everglades airboat"`, `"Florida Keys bridge"`, `"Miami skyline night"`. |
 | `cover_prompt` | Descrição **em inglês** da cena para IA (sempre preencha: é o plano B se a foto falhar). Cena original, cinematográfica. |
 | `galeria` | Opcional, 2–4 fotos de locais: itens com `busca:` (foto real) ou `prompt:` (IA) e `legenda:` em português. |

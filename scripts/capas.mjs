@@ -64,11 +64,16 @@ async function flux(prompt) {
   return Buffer.from(j.result.image, "base64");
 }
 
+// O plano gratuito da Pollinations limita pedidos seguidos (HTTP 402/429): espaçamos as chamadas.
+let lastPoll = 0;
 async function pollinations(prompt, seed) {
   const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1280&height=720&nologo=true&model=flux&seed=${seed}`;
   let last;
-  for (let i = 0; i < 3; i++) {
-    try { return await getBytes(url, { timeout: 180000 }); } catch (e) { last = e; await sleep(5000 * (i + 1)); }
+  for (let i = 0; i < 4; i++) {
+    const wait = lastPoll + 20000 - Date.now();
+    if (wait > 0) await sleep(wait);
+    lastPoll = Date.now();
+    try { return await getBytes(url, { timeout: 180000 }); } catch (e) { last = e; await sleep(30000 * (i + 1)); }
   }
   throw new Error(`Pollinations: ${last?.message}`);
 }
@@ -87,33 +92,33 @@ async function gerarIA(prompt, seed) {
   throw new Error(reasons.join(" | "));
 }
 
-/* ---------- fotos reais com licença livre (Openverse) ---------- */
-function commonsThumb(url) {
-  // https://upload.wikimedia.org/wikipedia/commons/a/ab/Arq.jpg -> .../commons/thumb/a/ab/Arq.jpg/1600px-Arq.jpg
-  const m = url.match(/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/([0-9a-f])\/([0-9a-f]{2})\/(.+)$/);
-  return m ? `https://upload.wikimedia.org/wikipedia/commons/thumb/${m[1]}/${m[2]}/${m[3]}/1600px-${m[3]}` : url;
-}
+/* ---------- fotos reais com licença livre (Wikimedia Commons) ----------
+   O Commons só aceita licenças livres que permitem uso comercial (CC0, domínio público, CC BY, CC BY-SA, FAL...).
+   Guardamos autor + licença + link da página da foto para o crédito obrigatório. */
+const LIC_OK = /^(cc0|public domain|pd|cc[ -]by(-sa)?( \d(\.\d)?)?|fal|attribution|no restrictions)/i;
+const clean = (html) => String(html || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().slice(0, 80);
 
 async function buscarFoto(query, usados) {
-  const api = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(query)}&license_type=commercial&mature=false&page_size=30`;
+  const api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=20" +
+    `&gsrsearch=${encodeURIComponent("filetype:bitmap " + query)}` +
+    "&prop=imageinfo&iiprop=url|size|mime|extmetadata&iiurlwidth=1600&iiextmetadatafilter=LicenseShortName|Artist";
   const r = await fetch(api, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(60000) });
-  if (!r.ok) throw new Error(`Openverse HTTP ${r.status}`);
-  const { results = [] } = await r.json();
-  const cands = results
-    .filter((x) => x.url && !usados.has(x.id) && (x.width || 0) >= 1000 && (!x.height || x.width >= x.height))
-    .filter((x) => !/svg|gif/i.test(x.filetype || ""));
-  for (const x of cands.slice(0, 6)) {
+  if (!r.ok) throw new Error(`Commons HTTP ${r.status}`);
+  const pages = Object.values((await r.json())?.query?.pages || {}).sort((a, b) => a.index - b.index);
+  const cands = pages
+    .map((p) => ({ id: p.pageid, info: p.imageinfo?.[0] }))
+    .filter(({ id, info }) => info && !usados.has(id) && /jpeg|png|webp/.test(info.mime || "") &&
+      info.width >= 1200 && info.width >= info.height * 1.2 && LIC_OK.test(info.extmetadata?.LicenseShortName?.value || ""));
+  for (const { id, info } of cands.slice(0, 6)) {
     try {
-      const big = (x.width || 0) > 1600 ? commonsThumb(x.url) : x.url;
-      let buf;
-      try { buf = await getBytes(big); } catch { buf = await getBytes(x.url); }
+      const buf = await getBytes(info.thumburl || info.url);
       const ext = sniff(buf);
       if (!ext) continue;
-      usados.add(x.id);
-      const lic = `${(x.license || "").toUpperCase()} ${x.license_version || ""}`.trim();
-      const autor = x.creator || "autor desconhecido";
-      return { buf, ext, engine: `openverse:${x.source || x.provider}`, credit: `Foto: ${autor} / ${lic}`, creditUrl: x.foreign_landing_url || "", fallbackReason: "" };
-    } catch { /* tenta o próximo */ }
+      usados.add(id);
+      const lic = info.extmetadata.LicenseShortName.value;
+      const autor = clean(info.extmetadata?.Artist?.value) || "autor desconhecido";
+      return { buf, ext, engine: "wikimedia-commons", credit: `Foto: ${autor} / ${lic} via Wikimedia Commons`, creditUrl: info.descriptionurl || "", fallbackReason: "" };
+    } catch { /* tenta a próxima */ }
   }
   throw new Error(`nenhuma foto livre utilizável para "${query}"`);
 }
