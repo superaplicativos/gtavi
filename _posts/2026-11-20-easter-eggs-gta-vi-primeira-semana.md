@@ -2,6 +2,9 @@
 title: "Easter eggs de GTA VI: os segredos que a comunidade já encontrou"
 date: 2026-11-20 14:00:00 -0300
 categoria: easter-eggs
+cover: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana.jpg"
+cover_credit: "Imagem: kotaku.com"
+cover_credit_url: "https://kotaku.com/live-updates-on-gta-6-the-biggest-launch-in-gaming-history-2000758030"
 imagem_pagina: "https://www.gamespot.com/articles/gta-6-has-a-hilarious-riff-on-easter-eggs/"
 imagem_fonte: "GameSpot"
 cover_fonte: foto

@@ -2,6 +2,9 @@
 title: "GTA VII já começou? O que a Rockstar e a Take-Two deixaram escapar"
 date: 2026-11-20 12:00:00 -0300
 categoria: gta-vii
+cover: "/assets/img/posts/gta-vii-quando-sai-o-que-se-sabe.png"
+cover_credit: "Imagem: tweaktown.com"
+cover_credit_url: "https://www.tweaktown.com/news/114581/gta-7-timeline-hinted-at-by-take-twos-ceo-just-days-before-gta-6-finally-arrives/index.html"
 imagem_pagina: "https://hothardware.com/news/gta-7-wont-suffer-gta-6s-8-year-development-gap-rockstar-vows"
 imagem_fonte: "HotHardware"
 cover_fonte: ia

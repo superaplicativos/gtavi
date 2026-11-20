@@ -2,6 +2,9 @@
 title: "GTA VI estreia com nota 99 no Metacritic e vende cerca de 19 milhões no primeiro dia"
 date: 2026-11-20 18:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-vi-nota-99-metacritic-19-milhoes.jpg"
+cover_credit: "Imagem: hromadske.ua"
+cover_credit_url: "https://hromadske.ua/en/lifestyle/274650-gta-6-launches-with-near-perfect-reviews-estimated-19-million-copies-sold"
 imagem_pagina: "https://www.forbes.com/sites/paultassi/2026/11/18/the-gta-6-metacritic-review-score-is-in-and-ties-an-all-time-record/"
 imagem_fonte: "Forbes"
 cover_fonte: ia
