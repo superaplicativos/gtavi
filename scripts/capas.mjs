@@ -142,7 +142,41 @@ async function salvar(res, nome) {
   return "/" + rel;
 }
 
-async function obter({ fonte, busca, prompt, seed, usados }) {
+/* ---------- imagem da própria fonte (Rockstar, sites de notícia) ----------
+   imagem_url: link direto da imagem. imagem_pagina: link da matéria; pegamos o og:image/twitter:image dela.
+   O crédito mostra o nome da fonte com link para a página original. */
+const BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
+const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+
+async function imagemDaFonte({ url, pagina, nome }) {
+  let img = url, page = pagina || url;
+  if (!img && pagina) {
+    const r = await fetch(pagina, { headers: { "User-Agent": BROWSER_UA, Accept: "text/html" }, redirect: "follow", signal: AbortSignal.timeout(45000) });
+    if (!r.ok) throw new Error(`página HTTP ${r.status}`);
+    const html = await r.text();
+    const tag = (p) => {
+      const m = html.match(new RegExp(`<meta[^>]+(?:property|name)=["']${p}["'][^>]*>`, "i"));
+      return m && (m[0].match(/content=["']([^"']+)["']/i) || [])[1];
+    };
+    img = tag("og:image:secure_url") || tag("og:image") || tag("twitter:image") || tag("twitter:image:src");
+    if (!img) throw new Error("página sem og:image");
+    img = new URL(img.replace(/&amp;/g, "&"), pagina).href;
+  }
+  const buf = await getBytes(img, { headers: { "User-Agent": BROWSER_UA, Referer: page } });
+  const ext = sniff(buf);
+  if (!ext) throw new Error("arquivo da fonte não é imagem válida");
+  return { buf, ext, engine: `fonte:${host(page)}`, credit: `Imagem: ${nome || host(page)}`, creditUrl: page, fallbackReason: "" };
+}
+
+async function obter({ fonte, busca, prompt, seed, usados, origem }) {
+  if (origem && (origem.url || origem.pagina)) {
+    try { return await imagemDaFonte(origem); }
+    catch (e) {
+      const r = await obter({ fonte, busca, prompt, seed, usados });
+      r.fallbackReason = `fonte: ${e.message}${r.fallbackReason ? " | " + r.fallbackReason : ""}`;
+      return r;
+    }
+  }
   if (fonte === "foto" && busca) {
     try { return await buscarFoto(busca, usados); }
     catch (e) { const r = await gerarIA(prompt || busca, seed); r.fallbackReason = `foto: ${e.message}${r.fallbackReason ? " | " + r.fallbackReason : ""}`; return r; }
@@ -172,6 +206,7 @@ async function processar(file) {
         prompt: field(fm, "cover_prompt") || `dramatic scene illustrating: ${title}`,
         seed: hash(slug) % 100000,
         usados,
+        origem: { url: field(fm, "imagem_url"), pagina: field(fm, "imagem_pagina"), nome: field(fm, "imagem_fonte") },
       });
       const src = await salvar(res, slug);
       const add = [`cover: ${yamlStr(src)}`, `cover_credit: ${yamlStr(res.credit)}`];
@@ -198,7 +233,8 @@ async function processar(file) {
       const get = (k) => { const l = block.find((b) => b.startsWith(k + ":")); return l ? l.slice(k.length + 1).trim().replace(/^["']|["']$/g, "") : ""; };
       if (get("src")) continue;
       try {
-        const res = await obter({ fonte: get("prompt") && !get("busca") ? "ia" : "foto", busca: get("busca"), prompt: get("prompt"), seed: (hash(slug) + n + 1) % 100000, usados });
+        const res = await obter({ fonte: get("prompt") && !get("busca") ? "ia" : "foto", busca: get("busca"), prompt: get("prompt"), seed: (hash(slug) + n + 1) % 100000, usados,
+          origem: { url: get("url"), pagina: get("pagina"), nome: get("fonte") } });
         const src = await salvar(res, `${slug}-${n + 1}`);
         const add = [`    src: ${yamlStr(src)}`, `    credito: ${yamlStr(res.credit)}`];
         if (res.creditUrl) add.push(`    credito_url: ${yamlStr(res.creditUrl)}`);

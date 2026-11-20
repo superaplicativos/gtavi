@@ -5,7 +5,9 @@ categoria: noticias
 featured: false
 especulacao: false
 cover_text: "Patch"
-cover_fonte: ia            # foto (real, licença livre) ou ia
+imagem_pagina: "https://..."   # página com a imagem do jogo (Rockstar Newswire ou a matéria-fonte)
+imagem_fonte: "Rockstar Games" # nome exibido no crédito
+cover_fonte: ia            # reserva: foto (real, licença livre) ou ia
 imagem_busca: "Miami skyline night"   # em inglês, usado se cover_fonte: foto
 cover_prompt: "cinematic scene in english describing the cover, no characters, no logos, no text"
 # galeria:

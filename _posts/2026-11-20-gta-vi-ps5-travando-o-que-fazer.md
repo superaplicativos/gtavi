@@ -2,8 +2,8 @@
 title: "GTA VI travando no PS5? Relatos e o que você pode tentar"
 date: 2026-11-20 13:00:00 -0300
 categoria: descobertas
-cover: "/assets/img/posts/gta-vi-ps5-travando-o-que-fazer.jpg"
-cover_credit: "Imagem ilustrativa gerada por IA"
+imagem_pagina: "https://vgtimes.com/games/gta-6/news/"
+imagem_fonte: "VGTimes"
 cover_fonte: ia
 cover_prompt: "a white game console on a dark shelf glowing with soft red warning light and faint heat haze, cables, cinematic close-up"
 cover_text: "Crash"

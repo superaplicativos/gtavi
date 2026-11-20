@@ -61,30 +61,41 @@ Este arquivo é a **fonte da verdade** para qualquer agente de IA (Claude, etc.)
 
 Todo post precisa de imagem de verdade. **A IA não baixa imagens manualmente**: ela só preenche os campos abaixo, e o GitHub Action `.github/workflows/imagens.yml` (script `scripts/capas.mjs`) gera/baixa as imagens automaticamente após o push, salva em `assets/img/posts/` e grava `cover`, `cover_credit` e `src` no próprio post.
 
+**Ordem de prioridade da capa:** 1) imagem do jogo vinda da fonte (`imagem_pagina`/`imagem_url`) → 2) foto real de local (`imagem_busca`) → 3) IA (`cover_prompt`). Se uma falhar, o script cai para a próxima.
+
 | Campo | Uso |
 |---|---|
+| `imagem_pagina` | **Prioridade 1 para tudo que é do jogo.** Link da página que tem a imagem: de preferência o Rockstar Newswire / post oficial, senão a matéria usada como fonte. O script pega a imagem principal (og:image), salva no repositório e credita com link. |
+| `imagem_url` | Alternativa: link direto de uma imagem específica (ex.: um screenshot do Newswire). |
+| `imagem_fonte` | Nome da fonte para o crédito: `"Rockstar Games"`, `"IGN"`, `"GameSpot"`... |
 | `cover_fonte` | `foto` = foto REAL com licença livre (Wikimedia Commons, uso comercial permitido, crédito automático). `ia` = imagem gerada por IA (Cloudflare FLUX, com Pollinations de reserva). |
 | `imagem_busca` | Termo de busca **em inglês** para a foto real. Use locais reais que inspiram Leonida: `"Miami Beach Ocean Drive"`, `"Everglades airboat"`, `"Florida Keys bridge"`, `"Miami skyline night"`. |
 | `cover_prompt` | Descrição **em inglês** da cena para IA (sempre preencha: é o plano B se a foto falhar). Cena original, cinematográfica. |
-| `galeria` | Opcional, 2–4 fotos de locais: itens com `busca:` (foto real) ou `prompt:` (IA) e `legenda:` em português. |
+| `galeria` | 2–4 imagens: itens com `pagina:` ou `url:` + `fonte:` (imagem do jogo vinda de uma fonte), `busca:` (foto real de local) ou `prompt:` (IA), sempre com `legenda:` em português. |
 
 Exemplo:
 
 ```yaml
+imagem_pagina: "https://www.rockstargames.com/newswire/article/..."
+imagem_fonte: "Rockstar Games"
 cover_fonte: foto
 imagem_busca: "Miami Beach Ocean Drive night"
 cover_prompt: "neon-lit art deco hotels on a beach avenue at night, palm trees, wet street reflections"
 galeria:
+  - pagina: "https://www.ign.com/articles/..."
+    fonte: "IGN"
+    legenda: "O local do easter egg no jogo"
   - busca: "Everglades airboat"
     legenda: "Os pântanos da Flórida, inspiração para Leonida"
 ```
 
-**Regras de imagem (não negociáveis):**
-- **Nunca** copie imagens de outros sites, de notícias, do Google Imagens ou arte/screenshots oficiais da Rockstar. Isso gera DMCA (o GitHub derruba o repositório) e reprovação/ban no AdSense.
-- Prompts de IA: **sem** personagens do jogo (Jason, Lucia etc.), **sem** logos, textos, marcas ou pessoas reais reconhecíveis.
-- Use `foto` para matérias sobre lugares, eventos e o mundo real; `ia` para conceitos (cheats, PC, prêmios, especulação).
-- Prints do próprio dono do canal (capturas de PS5/Xbox) são permitidos: salve em `assets/img/posts/`, use `cover: "/assets/img/posts/arquivo.jpg"` e `cover_credit: "Captura: GTA VI Detona BR"`.
-- Não preencha `cover`, `cover_credit` nem `src` à mão (exceto prints próprios): o Action faz isso.
+**Regras de imagem:**
+- Toda imagem vinda de outro site **sempre** leva crédito com o nome da fonte e link para a página original (o script faz isso automaticamente).
+- Para matérias sobre o jogo, prefira imagens oficiais (Rockstar Newswire, contas oficiais) e, depois, a matéria que você usou como fonte.
+- Vídeos: use `youtube:` com o ID (trailer oficial ou vídeo do canal) para embutir o player no topo do post.
+- Prompts de IA: cena original, sem logos e sem textos.
+- Prints do próprio dono do canal (capturas de PS5/Xbox): salve em `assets/img/posts/`, use `cover: "/assets/img/posts/arquivo.jpg"` e `cover_credit: "Captura: GTA VI Detona BR"`.
+- Não preencha `cover`, `cover_credit` nem `src` à mão (exceto prints próprios): o Action faz isso. Para trocar uma imagem já gerada, apague essas linhas e o Action gera de novo.
 
 ## 4. Fluxo diário de pesquisa (1 post novo por dia)
 
@@ -110,7 +121,7 @@ galeria:
 - **Fato ≠ rumor.** Rumor sempre com `especulacao: true` e linguagem condicional ("segundo rumores", "ainda não confirmado").
 - **Nunca invente** cheats, botões, datas, números de vendas ou locais. Na dúvida, escreva que ainda não foi confirmado.
 - **Nada de** links para pirataria, mods em console, "download para PC", geradores de dinheiro, vazamentos com material roubado.
-- **Imagens:** sempre via seção 3.1 (foto livre ou IA, automáticas). Nunca arte oficial da Rockstar nem imagens copiadas de outros sites. A capa em gradiente + `cover_text` é só o plano de emergência.
+- **Imagens:** sempre via seção 3.1 (imagem da fonte com crédito, foto real ou IA — automáticas). A capa em gradiente + `cover_text` é só o plano de emergência.
 - Estrutura: lide de 2–3 frases → seções `##` → listas/tabelas quando ajudar → fechamento com chamada para o canal (`[canal]({{ site.social.youtube }})`).
 - Tamanho: **500–1.000 palavras** para notícias e guias; mínimo 400.
 - Links internos: sempre com `{{ '/AAAA/MM/DD/slug/' | relative_url }}`. Coloque **pelo menos 1 link interno** para outro post relevante.

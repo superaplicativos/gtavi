@@ -2,9 +2,8 @@
 title: "Easter eggs de GTA VI: os segredos que a comunidade já encontrou"
 date: 2026-11-20 14:00:00 -0300
 categoria: easter-eggs
-cover: "/assets/img/posts/easter-eggs-gta-vi-primeira-semana.jpg"
-cover_credit: "Foto: European Union, Copernicus Sentinel-2 imagery / Attribution via Wikimedia Commons"
-cover_credit_url: "https://commons.wikimedia.org/wiki/File:Everglades_National_Park_on_World_Migratory_Bird_Day_(Copernicus).jpg"
+imagem_pagina: "https://www.gamespot.com/articles/gta-6-has-a-hilarious-riff-on-easter-eggs/"
+imagem_fonte: "GameSpot"
 cover_fonte: foto
 imagem_busca: "Everglades mangrove swamp"
 cover_prompt: "misty mangrove swamp at dusk with a tall radio tower silhouette and a mysterious hairy creature shadow between the trees"
