@@ -20,6 +20,7 @@ body_class: page page--post
       <span>{% assign words = content | strip_html | number_of_words %}{{ words | divided_by: 200 | plus: 1 }} min de leitura</span>
       {% if page.last_modified_at %}<i>•</i><span>Atualizado {{ page.last_modified_at | date: "%d/%m/%Y" }}</span>{% endif %}
     </div>
+    {% if page.cover_credit %}<p class="credit">{% if page.cover_credit_url %}<a href="{{ page.cover_credit_url }}" target="_blank" rel="noopener nofollow">{{ page.cover_credit }}</a>{% else %}{{ page.cover_credit }}{% endif %}</p>{% endif %}
   </div>
 </header>
 
@@ -33,6 +34,21 @@ body_class: page page--post
     {% endif %}
 
     {{ content }}
+
+    {% assign fotos = page.galeria | where_exp: "g", "g.src" %}
+    {% if fotos.size > 0 %}
+    <section class="gallery">
+      <h2>Galeria</h2>
+      <div class="gallery__grid">
+        {% for g in fotos %}
+        <figure>
+          <a href="{{ g.src | relative_url }}" target="_blank" rel="noopener"><img src="{{ g.src | relative_url }}" alt="{{ g.legenda | default: g.busca | default: page.title | escape }}" loading="lazy"></a>
+          <figcaption>{% if g.legenda %}{{ g.legenda }}{% endif %}{% if g.credito %}<small>{% if g.credito_url %}<a href="{{ g.credito_url }}" target="_blank" rel="noopener nofollow">{{ g.credito }}</a>{% else %}{{ g.credito }}{% endif %}</small>{% endif %}</figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
 
     {% include ad.html slot="article" %}
 

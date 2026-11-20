@@ -2,6 +2,14 @@
 title: "GTA VI já está disponível: horário, plataformas e como jogar pela nuvem"
 date: 2026-11-19 08:00:00 -0300
 categoria: noticias
+cover_fonte: foto
+imagem_busca: "Miami skyline sunset"
+cover_prompt: "panoramic Miami-like skyline at sunset seen from the water, palm trees in the foreground"
+galeria:
+  - busca: "Ocean Drive Miami Beach night"
+    legenda: "Ocean Drive, em Miami Beach: o DNA de Vice City"
+  - busca: "Brickell Miami skyline"
+    legenda: "Brickell, o centro financeiro de Miami"
 featured: true
 cover_text: "Chegou"
 description: "Depois de dois adiamentos, GTA VI saiu em 19 de novembro de 2026 para PS5 e Xbox Series X|S, com liberação à meia-noite no horário local e opção de jogar no Xbox Cloud Gaming."

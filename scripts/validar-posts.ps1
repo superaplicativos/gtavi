@@ -17,6 +17,8 @@ Get-ChildItem (Join-Path $root "_posts") -Filter *.md | ForEach-Object {
     if ($fm -match '(?m)^categoria:\s*"?([a-z0-9-]+)"?') { if ($cats -notcontains $Matches[1]) { $bad += "categoria '$($Matches[1])' não existe em _data/categories.yml" } }
     if ($fm -match '(?m)^categoria:\s*"?gta-vii"?' -and $fm -notmatch '(?m)^especulacao:\s*true') { $bad += "posts gta-vii precisam de especulacao: true" }
     if ($fm -notmatch '(?m)^cover_text:' -and $fm -notmatch '(?m)^cover:' -and $fm -notmatch '(?m)^youtube:') { $bad += "falta cover_text (ou cover/youtube)" }
+    if ($fm -notmatch '(?m)^cover:' -and $fm -notmatch '(?m)^youtube:' -and $fm -notmatch '(?m)^cover_prompt:') { $bad += "falta cover_prompt (imagem automática, ver AGENTS.md 3.1)" }
+    if ($fm -match '(?m)^cover_fonte:\s*foto' -and $fm -notmatch '(?m)^imagem_busca:') { $bad += "cover_fonte: foto exige imagem_busca" }
     if ($fm -match '(?m)^date:\s*(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}(:\d{2})?)\s*([+-]\d{4})?') {
       if ($Matches[1] -ne $fileDate) { $bad += "date ($($Matches[1])) diferente da data do arquivo ($fileDate)" }
       if (-not $Matches[4]) { $bad += "date sem fuso (use -0300)" }

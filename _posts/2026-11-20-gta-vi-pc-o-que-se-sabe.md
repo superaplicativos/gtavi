@@ -2,6 +2,8 @@
 title: "GTA VI no PC: existe data? O que se sabe até agora"
 date: 2026-11-20 11:00:00 -0300
 categoria: noticias
+cover_fonte: ia
+cover_prompt: "a powerful gaming PC tower with RGB lighting on a desk in a dark room, big window showing a neon tropical city at night"
 cover_text: "PC?"
 description: "A Take-Two segue listando GTA VI apenas para PS5 e Xbox Series. Veja o histórico da Rockstar com versões de PC e o que dá para esperar."
 tags: [pc, steam, take-two, data-de-lancamento]

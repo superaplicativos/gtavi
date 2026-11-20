@@ -2,6 +2,14 @@
 title: "10 dicas para começar bem em GTA VI (sem spoilers)"
 date: 2026-11-20 15:00:00 -0300
 categoria: dicas
+cover_fonte: foto
+imagem_busca: "Overseas Highway Florida Keys"
+cover_prompt: "long bridge over turquoise sea in the Florida Keys at sunset, a sports car driving"
+galeria:
+  - busca: "Florida Keys aerial"
+    legenda: "As ilhas do sul da Flórida, inspiração para o litoral de Leonida"
+  - busca: "Everglades airboat"
+    legenda: "Barcos de pântano: explore com calma"
 featured: true
 cover_text: "10 dicas"
 description: "Do salvamento automático que está confundindo muita gente até a melhor forma de explorar Leonida: um guia rápido para as primeiras horas."

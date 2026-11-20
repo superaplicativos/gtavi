@@ -2,6 +2,8 @@
 title: "Cheats de GTA VI: quantos existem, categorias e como desbloquear"
 date: 2026-11-20 16:00:00 -0300
 categoria: cheats
+cover_fonte: ia
+cover_prompt: "close-up of a modern black game controller on a desk lit by pink and cyan neon, a retro television glowing in the background with a sunset city on screen"
 featured: true
 cover_text: "61 cheats"
 description: "Os guias já falam em 61 cheats divididos em cinco categorias — mas tem pegadinha: a maioria só libera depois da história. Veja o que já se sabe e o que ainda está em disputa."

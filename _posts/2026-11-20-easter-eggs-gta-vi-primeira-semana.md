@@ -2,6 +2,16 @@
 title: "Easter eggs de GTA VI: os segredos que a comunidade já encontrou"
 date: 2026-11-20 14:00:00 -0300
 categoria: easter-eggs
+cover_fonte: foto
+imagem_busca: "Everglades mangrove swamp"
+cover_prompt: "misty mangrove swamp at dusk with a tall radio tower silhouette and a mysterious hairy creature shadow between the trees"
+galeria:
+  - busca: "radio tower Florida"
+    legenda: "Torres de rádio no horizonte: na vida real e em Leonida"
+  - busca: "alligator Everglades"
+    legenda: "Os pântanos da Flórida, inspiração da região de Cottonmouth"
+  - busca: "jet ski ocean Florida"
+    legenda: "Mar aberto: onde aparece o tal cachorro de jet ski"
 featured: true
 cover_text: "Segredos"
 description: "Ovos de Páscoa literais no topo de uma torre, o Pé-Grande de volta com outro nome, um cachorro de jet ski e referências a outros jogos da Rockstar."

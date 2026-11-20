@@ -2,6 +2,14 @@
 title: "Rockstar anuncia “GTA 6: The Festival”, evento de música em Miami"
 date: 2026-11-20 09:00:00 -0300
 categoria: noticias
+cover_fonte: foto
+imagem_busca: "Wynwood Walls Miami"
+cover_prompt: "colorful street art murals in a Miami arts district at golden hour, music festival lights"
+galeria:
+  - busca: "Wynwood mural Miami"
+    legenda: "Wynwood, bairro dos murais em Miami"
+  - busca: "music festival crowd night lights"
+    legenda: "Clima de festival"
 cover_text: "Festival"
 description: "A celebração do lançamento acontece em 21 de novembro no Mana Wynwood, em Miami — a cidade real que inspira Vice City."
 tags: [evento, musica, miami, vice-city, trilha-sonora]

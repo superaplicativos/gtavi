@@ -2,6 +2,8 @@
 title: "GTA VII já começou? O que a Rockstar e a Take-Two deixaram escapar"
 date: 2026-11-20 12:00:00 -0300
 categoria: gta-vii
+cover_fonte: ia
+cover_prompt: "a lonely foggy highway at night leading to a distant glowing purple city skyline on the horizon, mysterious atmosphere, sense of the unknown"
 featured: true
 especulacao: true
 cover_text: "GTA VII"

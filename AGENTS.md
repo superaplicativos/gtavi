@@ -51,10 +51,40 @@ Este arquivo é a **fonte da verdade** para qualquer agente de IA (Claude, etc.)
 | `fontes` | ✅ | Lista de `- nome: / url:` com **todas** as fontes consultadas. |
 | `featured` | opcional | `true` para ir aos Destaques. No máximo **1 post featured por dia**; os destaques mostram os 5 mais recentes marcados. |
 | `especulacao` | opcional | `true` em qualquer rumor/teoria. Mostra selo amarelo + aviso. **Obrigatório na categoria `gta-vii`.** |
+| `cover_fonte` / `imagem_busca` / `cover_prompt` / `galeria` | ✅ | Ver seção 3.1 — imagens automáticas. |
 | `youtube` | opcional | Só o ID do vídeo (ex.: `dQw4w9WgXcQ`). Embute o player e usa a thumb como capa. Use para vídeos do canal. |
 | `cover` | opcional | `/assets/img/posts/arquivo.jpg` — **somente imagens próprias** (prints do próprio dono, thumbs do canal) ou com licença clara. |
 | `cover_alt` | opcional | Texto alternativo da imagem. |
 | `last_modified_at` | opcional | Ao atualizar um post antigo: `2026-11-22 10:00:00 -0300`. |
+
+## 3.1 Imagens (OBRIGATÓRIO em todo post)
+
+Todo post precisa de imagem de verdade. **A IA não baixa imagens manualmente**: ela só preenche os campos abaixo, e o GitHub Action `.github/workflows/imagens.yml` (script `scripts/capas.mjs`) gera/baixa as imagens automaticamente após o push, salva em `assets/img/posts/` e grava `cover`, `cover_credit` e `src` no próprio post.
+
+| Campo | Uso |
+|---|---|
+| `cover_fonte` | `foto` = foto REAL com licença livre (Openverse/Wikimedia/Flickr CC, uso comercial permitido, crédito automático). `ia` = imagem gerada por IA (Cloudflare FLUX, com Pollinations de reserva). |
+| `imagem_busca` | Termo de busca **em inglês** para a foto real. Use locais reais que inspiram Leonida: `"Miami Beach Ocean Drive"`, `"Everglades airboat"`, `"Florida Keys bridge"`, `"Miami skyline night"`. |
+| `cover_prompt` | Descrição **em inglês** da cena para IA (sempre preencha: é o plano B se a foto falhar). Cena original, cinematográfica. |
+| `galeria` | Opcional, 2–4 fotos de locais: itens com `busca:` (foto real) ou `prompt:` (IA) e `legenda:` em português. |
+
+Exemplo:
+
+```yaml
+cover_fonte: foto
+imagem_busca: "Miami Beach Ocean Drive night"
+cover_prompt: "neon-lit art deco hotels on a beach avenue at night, palm trees, wet street reflections"
+galeria:
+  - busca: "Everglades airboat"
+    legenda: "Os pântanos da Flórida, inspiração para Leonida"
+```
+
+**Regras de imagem (não negociáveis):**
+- **Nunca** copie imagens de outros sites, de notícias, do Google Imagens ou arte/screenshots oficiais da Rockstar. Isso gera DMCA (o GitHub derruba o repositório) e reprovação/ban no AdSense.
+- Prompts de IA: **sem** personagens do jogo (Jason, Lucia etc.), **sem** logos, textos, marcas ou pessoas reais reconhecíveis.
+- Use `foto` para matérias sobre lugares, eventos e o mundo real; `ia` para conceitos (cheats, PC, prêmios, especulação).
+- Prints do próprio dono do canal (capturas de PS5/Xbox) são permitidos: salve em `assets/img/posts/`, use `cover: "/assets/img/posts/arquivo.jpg"` e `cover_credit: "Captura: GTA VI Detona BR"`.
+- Não preencha `cover`, `cover_credit` nem `src` à mão (exceto prints próprios): o Action faz isso.
 
 ## 4. Fluxo diário de pesquisa (1 post novo por dia)
 
@@ -80,7 +110,7 @@ Este arquivo é a **fonte da verdade** para qualquer agente de IA (Claude, etc.)
 - **Fato ≠ rumor.** Rumor sempre com `especulacao: true` e linguagem condicional ("segundo rumores", "ainda não confirmado").
 - **Nunca invente** cheats, botões, datas, números de vendas ou locais. Na dúvida, escreva que ainda não foi confirmado.
 - **Nada de** links para pirataria, mods em console, "download para PC", geradores de dinheiro, vazamentos com material roubado.
-- **Imagens:** não use arte oficial da Rockstar nem imagens de outros sites. A capa automática (gradiente + `cover_text`) é o padrão.
+- **Imagens:** sempre via seção 3.1 (foto livre ou IA, automáticas). Nunca arte oficial da Rockstar nem imagens copiadas de outros sites. A capa em gradiente + `cover_text` é só o plano de emergência.
 - Estrutura: lide de 2–3 frases → seções `##` → listas/tabelas quando ajudar → fechamento com chamada para o canal (`[canal]({{ site.social.youtube }})`).
 - Tamanho: **500–1.000 palavras** para notícias e guias; mínimo 400.
 - Links internos: sempre com `{{ '/AAAA/MM/DD/slug/' | relative_url }}`. Coloque **pelo menos 1 link interno** para outro post relevante.
@@ -112,6 +142,7 @@ Configuração em `_config.yml` → `ads`. Detalhes completos em `docs/MONETIZAC
 - [ ] Nome do arquivo `AAAA-MM-DD-slug.md` e `date` no mesmo dia, fuso `-0300`, hora já passada
 - [ ] `categoria` existe em `_data/categories.yml`
 - [ ] `description`, `tags`, `fontes`, `cover_text` preenchidos
+- [ ] `cover_fonte` + `cover_prompt` (e `imagem_busca` se for `foto`) preenchidos; galeria quando o post fala de lugares
 - [ ] Rumor? → `especulacao: true`
 - [ ] Nenhum texto copiado; números conferidos em 2 fontes
 - [ ] Pelo menos 1 link interno e chamada para o canal
