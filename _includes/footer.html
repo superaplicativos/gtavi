@@ -1,0 +1,34 @@
+<section class="yt-cta reveal">
+  <div class="yt-cta__glow"></div>
+  <div class="yt-cta__body">
+    <span class="kicker">CANAL OFICIAL DO PORTAL</span>
+    <h2>Assista ao <em>Detona BR</em> no YouTube</h2>
+    <p>Gameplays, segredos testados na prática, cheats em vídeo e as teorias mais malucas sobre GTA VII. Se inscreva e ative o sininho.</p>
+    <a class="btn btn--yt" href="{{ site.social.youtube }}" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg> Inscreva-se no canal</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <a class="brand brand--lg" href="{{ '/' | relative_url }}"><span class="brand__gta">GTA</span><span class="brand__vi">VI</span><span class="brand__sub">DETONA<b>BR</b></span></a>
+      <p class="muted">{{ site.description }}</p>
+    </div>
+    <div>
+      <h4>Categorias</h4>
+      {% for c in site.data.categories %}<a href="{{ '/categorias/' | append: c[0] | append: '/' | relative_url }}">{{ c[1].name }}</a>{% endfor %}
+    </div>
+    <div>
+      <h4>Portal</h4>
+      <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
+      <a href="{{ '/contato/' | relative_url }}">Contato</a>
+      <a href="{{ '/privacidade/' | relative_url }}">Política de Privacidade</a>
+      <a href="{{ '/termos/' | relative_url }}">Termos de Uso</a>
+      <a href="{{ '/feed.xml' | relative_url }}"><svg class="ico"><use href="#i-rss"/></svg> RSS</a>
+    </div>
+  </div>
+  <p class="footer__legal">
+    {{ site.title }} é um site de fãs independente e <strong>não oficial</strong>. Não temos qualquer vínculo com a Rockstar Games ou a Take-Two Interactive.
+    Grand Theft Auto, GTA e marcas relacionadas pertencem aos seus respectivos donos. © {{ site.time | date: "%Y" }} {{ site.title }}.
+  </p>
+</footer>

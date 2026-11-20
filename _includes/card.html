@@ -1,0 +1,27 @@
+{% comment %} Uso: {% include card.html post=post size="lg|md|sm" %} {% endcomment %}
+{% assign p = include.post %}
+{% assign cat = site.data.categories[p.categoria] %}
+{% assign size = include.size | default: "md" %}
+<article class="card card--{{ size }} reveal" style="--c1: {{ cat.color | default: '#ff2e88' }}; --c2: {{ cat.color2 | default: '#ff8a00' }}">
+  <a href="{{ p.url | relative_url }}" class="card__link">
+    <div class="card__media">
+      {% if p.cover %}
+      <img src="{{ p.cover | relative_url }}" alt="{{ p.cover_alt | default: p.title | escape }}" loading="lazy">
+      {% elsif p.youtube %}
+      <img src="https://i.ytimg.com/vi/{{ p.youtube }}/hqdefault.jpg" alt="{{ p.title | escape }}" loading="lazy">
+      {% else %}
+      <div class="card__art" aria-hidden="true">
+        <span class="card__big">{{ p.cover_text | default: cat.short }}</span>
+        <svg class="card__icon"><use href="#{{ cat.icon | default: 'i-news' }}"/></svg>
+      </div>
+      {% endif %}
+      <span class="chip">{{ cat.short | default: p.categoria }}</span>
+      {% if p.especulacao %}<span class="chip chip--warn">ESPECULAÇÃO</span>{% endif %}
+    </div>
+    <div class="card__body">
+      <h3>{{ p.title }}</h3>
+      {% if size != "sm" %}<p>{{ p.excerpt_text | default: p.description | default: p.excerpt | strip_html | truncate: 150 }}</p>{% endif %}
+      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%d/%m/%Y" }}</time>
+    </div>
+  </a>
+</article>

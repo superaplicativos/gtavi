@@ -1,0 +1,59 @@
+# Categorias do portal. A chave (ex.: noticias) é o valor usado em `categoria:` nos posts.
+# Para criar uma categoria nova: adicione aqui E crie categorias/<chave>.html (copie um existente).
+# color/color2 = gradiente da capa automática. icon = id de símbolo em _includes/icons.html
+
+noticias:
+  name: "Notícias"
+  short: "News"
+  description: "Tudo o que acontece no universo de GTA VI, todo santo dia."
+  color: "#ff2e88"
+  color2: "#ff8a00"
+  icon: "i-news"
+
+cheats:
+  name: "Cheats & Códigos"
+  short: "Cheats"
+  description: "Códigos, sequências de botões e como desbloquear cada cheat."
+  color: "#00e5ff"
+  color2: "#7c4dff"
+  icon: "i-cheat"
+
+dicas:
+  name: "Dicas & Guias"
+  short: "Dicas"
+  description: "Guias práticos para dominar Leonida do jeito certo."
+  color: "#00ffa3"
+  color2: "#00a3ff"
+  icon: "i-tip"
+
+easter-eggs:
+  name: "Easter Eggs"
+  short: "Easter Eggs"
+  description: "Segredos, referências e bizarrices escondidas no mapa."
+  color: "#ffd600"
+  color2: "#ff2e88"
+  icon: "i-egg"
+
+descobertas:
+  name: "Descobertas"
+  short: "Descobertas"
+  description: "O que a comunidade está encontrando: locais, mecânicas, glitches."
+  color: "#ff6b3d"
+  color2: "#b4005a"
+  icon: "i-scope"
+
+gta-vii:
+  name: "GTA VII (Especulação)"
+  short: "GTA VII"
+  description: "Rumores, pistas e teorias sobre o próximo GTA. Tudo marcado como especulação."
+  color: "#9b5cff"
+  color2: "#2a0a5e"
+  icon: "i-crystal"
+
+videos:
+  name: "Vídeos"
+  short: "Vídeos"
+  description: "Os vídeos do canal GTA VI Detona BR."
+  color: "#ff1744"
+  color2: "#4a0010"
+  icon: "i-play"

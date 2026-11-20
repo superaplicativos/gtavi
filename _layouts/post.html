@@ -1,0 +1,89 @@
+---
+layout: default
+body_class: page page--post
+---
+{% assign cat = site.data.categories[page.categoria] %}
+<div class="progress" id="progress"></div>
+
+<header class="post-hero" style="--c1: {{ cat.color | default: '#ff2e88' }}; --c2: {{ cat.color2 | default: '#ff8a00' }}">
+  <div class="post-hero__bg" aria-hidden="true">
+    {% if page.cover %}<img src="{{ page.cover | relative_url }}" alt="">{% else %}<span class="post-hero__word">{{ page.cover_text | default: cat.short }}</span>{% endif %}
+  </div>
+  <div class="wrap post-hero__inner">
+    <a class="chip chip--lg" href="{{ '/categorias/' | append: page.categoria | append: '/' | relative_url }}">{{ cat.name | default: page.categoria }}</a>
+    {% if page.especulacao %}<span class="chip chip--warn chip--lg">ESPECULAÇÃO · NÃO CONFIRMADO</span>{% endif %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}<p class="post-lede">{{ page.description }}</p>{% endif %}
+    <div class="post-meta">
+      <span>{{ page.author }}</span><i>•</i>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time><i>•</i>
+      <span>{% assign words = content | strip_html | number_of_words %}{{ words | divided_by: 200 | plus: 1 }} min de leitura</span>
+      {% if page.last_modified_at %}<i>•</i><span>Atualizado {{ page.last_modified_at | date: "%d/%m/%Y" }}</span>{% endif %}
+    </div>
+  </div>
+</header>
+
+<div class="wrap post-layout">
+  <article class="prose">
+    {% if page.especulacao %}
+    <div class="callout callout--warn"><strong>Atenção:</strong> este texto reúne rumores, declarações e teorias. Nada aqui foi confirmado pela Rockstar Games ou pela Take-Two.</div>
+    {% endif %}
+    {% if page.youtube %}
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.youtube }}" title="{{ page.title | escape }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    {% endif %}
+
+    {{ content }}
+
+    {% include ad.html slot="article" %}
+
+    {% if page.fontes %}
+    <section class="sources">
+      <h2>Fontes</h2>
+      <ul>{% for f in page.fontes %}<li><a href="{{ f.url }}" target="_blank" rel="noopener nofollow">{{ f.nome }}</a></li>{% endfor %}</ul>
+    </section>
+    {% endif %}
+
+    {% if page.tags.size > 0 %}
+    <div class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</div>
+    {% endif %}
+
+    <div class="share">
+      <span>Compartilhe:</span>
+      <a target="_blank" rel="noopener" href="https://wa.me/?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}">WhatsApp</a>
+      <a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}">X</a>
+      <a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}">Facebook</a>
+      <button class="copy" data-copy="{{ page.url | absolute_url }}">Copiar link</button>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-box side-box--yt">
+      <svg><use href="#i-yt"/></svg>
+      <h4>Detona BR no YouTube</h4>
+      <p>Esse conteúdo também em vídeo, com gameplay.</p>
+      <a class="btn btn--yt btn--sm" href="{{ site.social.youtube }}" target="_blank" rel="noopener">Ver canal</a>
+    </div>
+    {% include ad.html slot="sidebar" %}
+    <div class="side-box">
+      <h4>Mais lidas da semana</h4>
+      <ol class="rank">
+        {% assign hot = site.posts | where: "featured", true %}
+        {% for p in hot limit: 5 %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}
+      </ol>
+    </div>
+  </aside>
+</div>
+
+<section class="wrap related">
+  <h2 class="section-title"><span>Continue explorando</span></h2>
+  <div class="grid grid--3">
+    {% assign related = site.posts | where: "categoria", page.categoria %}
+    {% assign shown = 0 %}
+    {% for p in related %}{% if p.url != page.url and shown < 3 %}{% include card.html post=p size="md" %}{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}
+    {% if shown < 3 %}{% for p in site.posts %}{% if p.url != page.url and p.categoria != page.categoria and shown < 3 %}{% include card.html post=p size="md" %}{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}{% endif %}
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":{{ page.title | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ page.last_modified_at | default: page.date | date_to_xmlschema }}","author":{"@type":"Organization","name":{{ site.title | jsonify }}},"publisher":{"@type":"Organization","name":{{ site.title | jsonify }}},"description":{{ page.description | default: page.excerpt | strip_html | jsonify }},"mainEntityOfPage":"{{ page.url | absolute_url }}"}
+</script>

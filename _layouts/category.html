@@ -1,0 +1,25 @@
+---
+layout: default
+body_class: page page--cat
+---
+{% assign cat = site.data.categories[page.categoria] %}
+{% assign posts = site.posts | where: "categoria", page.categoria %}
+<header class="cat-hero" style="--c1: {{ cat.color }}; --c2: {{ cat.color2 }}">
+  <div class="wrap">
+    <svg class="cat-hero__icon"><use href="#{{ cat.icon }}"/></svg>
+    <span class="kicker">CATEGORIA</span>
+    <h1>{{ cat.name }}</h1>
+    <p>{{ cat.description }}</p>
+    <span class="cat-hero__count">{{ posts.size }} {% if posts.size == 1 %}matéria{% else %}matérias{% endif %}</span>
+  </div>
+</header>
+<section class="wrap">
+  {% include ad.html slot="top" %}
+  {% if posts.size > 0 %}
+  <div class="grid grid--3">
+    {% for p in posts %}{% include card.html post=p size="md" %}{% endfor %}
+  </div>
+  {% else %}
+  <p class="empty">Em breve: as primeiras matérias desta categoria estão a caminho. Enquanto isso, veja o <a href="{{ '/' | relative_url }}">que já saiu</a>.</p>
+  {% endif %}
+</section>

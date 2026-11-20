@@ -1,0 +1,91 @@
+---
+layout: default
+body_class: page page--home
+title: "GTA VI Detona BR — notícias, cheats, dicas e easter eggs de GTA VI"
+---
+{% assign featured = site.posts | where: "featured", true %}
+{% assign hero_post = featured.first | default: site.posts.first %}
+
+<section class="hero" id="hero">
+  <div class="hero__sky" aria-hidden="true">
+    <div class="hero__stars"></div>
+    <div class="hero__sun"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <svg class="hero__city" viewBox="0 0 1600 300" preserveAspectRatio="none">
+      <path d="M0 300V210h40v-30h30v50h25v-90h40v90h20v-60h35v-40h30v100h25v-130h45v130h20v-70h30v-30h25v100h40v-160l30-20 30 20v160h25v-80h40v80h20v-50h30v-110h40v110h25v-60h35v60h30v-140h20v-20h20v20h20v140h30v-70h40v70h25v-100h45v100h20v-40h35v-90h30v130h25v-60h40v60h30v-120h35v120h25v-70h40v70h20v-30h45v-50h30v80h25v-100h40v100h30v-40h40V300Z"/>
+    </svg>
+    <svg class="hero__palm hero__palm--l" viewBox="0 0 200 400"><path d="M104 400c-6-90-2-170 8-250l6 1c-8 80-10 160-6 249Z"/><path d="M112 150c-30-30-70-36-108-20 34-4 66 6 96 30-36-8-72 2-98 30 32-18 66-22 100-12-22 14-38 36-44 64 16-26 38-44 62-54 4 30 0 58-12 84 22-26 30-56 28-88 20 18 32 44 34 74 8-34-2-66-26-90 36-2 66 12 90 40-14-36-46-60-86-62 30-18 62-22 96-12-34-24-76-26-112-6 20-22 46-36 76-40-38-6-72 8-96 38Z"/></svg>
+    <svg class="hero__palm hero__palm--r" viewBox="0 0 200 400"><path d="M104 400c-6-90-2-170 8-250l6 1c-8 80-10 160-6 249Z"/><path d="M112 150c-30-30-70-36-108-20 34-4 66 6 96 30-36-8-72 2-98 30 32-18 66-22 100-12-22 14-38 36-44 64 16-26 38-44 62-54 4 30 0 58-12 84 22-26 30-56 28-88 20 18 32 44 34 74 8-34-2-66-26-90 36-2 66 12 90 40-14-36-46-60-86-62 30-18 62-22 96-12-34-24-76-26-112-6 20-22 46-36 76-40-38-6-72 8-96 38Z"/></svg>
+    <div class="hero__water"></div>
+    <div class="hero__scan"></div>
+  </div>
+
+  <div class="hero__content">
+    <span class="kicker kicker--pulse"><b></b> LEONIDA ESTÁ ABERTA · O JOGO CHEGOU</span>
+    <h1 class="hero__title" data-text="GTA VI">
+      <span class="t-gta">GTA</span><span class="t-vi">VI</span>
+    </h1>
+    <div class="hero__brand">DETONA <b>BR</b></div>
+    <p class="hero__lede">O portal brasileiro que vive dentro de Leonida. Notícias todo dia, cheats testados, easter eggs, descobertas da comunidade — e as primeiras pistas de GTA VII.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--primary" href="{{ hero_post.url | relative_url }}">Matéria em destaque <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost" href="{{ '/categorias/cheats/' | relative_url }}">Ver todos os cheats</a>
+    </div>
+    <div class="hero__stats">
+      <div><strong data-count="99">0</strong><span>no Metacritic</span></div>
+      <div><strong data-count="19" data-suffix="M+">0</strong><span>cópias estimadas no dia 1</span></div>
+      <div><strong data-count="61">0</strong><span>cheats reportados</span></div>
+      <div><strong id="daysSince">0</strong><span id="daysLabel">dias em Leonida</span></div>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#destaques" aria-label="Rolar para os destaques"><span></span></a>
+</section>
+
+<section class="wrap" id="destaques">
+  {% include ad.html slot="top" %}
+  <h2 class="section-title reveal"><span>Destaques</span><small>o que está bombando agora</small></h2>
+  <div class="bento">
+    {% for p in featured limit: 5 %}
+      {% if forloop.first %}{% include card.html post=p size="lg" %}{% else %}{% include card.html post=p size="md" %}{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cats wrap">
+  <h2 class="section-title reveal"><span>Explore Leonida</span><small>escolha sua missão</small></h2>
+  <div class="cats__grid">
+    {% for c in site.data.categories %}
+    {% assign n = site.posts | where: "categoria", c[0] %}
+    <a class="cat-tile reveal" href="{{ '/categorias/' | append: c[0] | append: '/' | relative_url }}" style="--c1: {{ c[1].color }}; --c2: {{ c[1].color2 }}">
+      <svg><use href="#{{ c[1].icon }}"/></svg>
+      <strong>{{ c[1].name }}</strong>
+      <span>{{ n.size }} {% if n.size == 1 %}matéria{% else %}matérias{% endif %}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap latest">
+  <h2 class="section-title reveal"><span>Últimas do dia</span><small>atualizado diariamente</small></h2>
+  <div class="grid grid--3">
+    {% for p in site.posts limit: 9 %}
+      {% include card.html post=p size="md" %}
+      {% if forloop.index == 6 %}<div class="grid__ad">{% include ad.html slot="infeed" %}</div>{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% assign vii = site.posts | where: "categoria", "gta-vii" %}
+{% if vii.size > 0 %}
+<section class="vii reveal">
+  <div class="vii__bg" aria-hidden="true"><span>VII</span></div>
+  <div class="wrap vii__inner">
+    <span class="kicker">ZONA DE ESPECULAÇÃO</span>
+    <h2>O próximo capítulo <em>já começou?</em></h2>
+    <p>Rumores, declarações de executivos e teorias da comunidade sobre GTA VII. Tudo separado e marcado como especulação — aqui a gente não vende boato como fato.</p>
+    <div class="grid grid--3">
+      {% for p in vii limit: 3 %}{% include card.html post=p size="sm" %}{% endfor %}
+    </div>
+    <a class="btn btn--ghost" href="{{ '/categorias/gta-vii/' | relative_url }}">Todas as teorias de GTA VII</a>
+  </div>
+</section>
+{% endif %}

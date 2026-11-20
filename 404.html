@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Página não encontrada"
+permalink: /404.html
+sitemap: false
+---
+<header class="cat-hero" style="--c1:#ff1744;--c2:#7c4dff">
+  <div class="wrap">
+    <span class="kicker">★★★★★ PROCURADO</span>
+    <h1>WASTED</h1>
+    <p>Essa página fugiu da polícia e sumiu do mapa. Volte para a <a href="{{ '/' | relative_url }}" style="text-decoration:underline">página inicial</a> ou use a busca no topo.</p>
+  </div>
+</header>
+<section class="wrap">
+  <h2 class="section-title"><span>Últimas</span></h2>
+  <div class="grid grid--3">{% for p in site.posts limit: 3 %}{% include card.html post=p size="md" %}{% endfor %}</div>
+</section>

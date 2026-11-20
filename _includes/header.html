@@ -1,0 +1,35 @@
+<div class="ticker" role="region" aria-label="Últimas">
+  <span class="ticker__label"><svg><use href="#i-bolt"/></svg> URGENTE</span>
+  <div class="ticker__track">
+    <div class="ticker__inner">
+      {% for i in (1..2) %}{% for item in site.data.ticker.items %}
+      {% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.text }}</a>{% else %}<span>{{ item.text }}</span>{% endif %}<i>◆</i>
+      {% endfor %}{% endfor %}
+    </div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — início">
+    <span class="brand__gta">GTA</span><span class="brand__vi">VI</span>
+    <span class="brand__sub">DETONA<b>BR</b></span>
+  </a>
+  <nav class="nav__links" id="navlinks" aria-label="Categorias">
+    {% for c in site.data.categories %}
+    <a href="{{ '/categorias/' | append: c[0] | append: '/' | relative_url }}" {% if page.categoria == c[0] %}class="is-active"{% endif %}>{{ c[1].short }}</a>
+    {% endfor %}
+  </nav>
+  <div class="nav__actions">
+    <button class="icon-btn" id="searchOpen" aria-label="Buscar"><svg><use href="#i-search"/></svg></button>
+    <a class="yt-btn" href="{{ site.social.youtube }}" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg><span>Canal</span></a>
+    <button class="icon-btn nav__burger" id="burger" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="search" id="search" hidden>
+  <div class="search__box">
+    <input id="searchInput" type="search" placeholder="Buscar cheats, easter eggs, notícias…" autocomplete="off" aria-label="Buscar no site">
+    <button class="search__close" id="searchClose" aria-label="Fechar">ESC</button>
+    <ul id="searchResults" class="search__results"></ul>
+  </div>
+</div>

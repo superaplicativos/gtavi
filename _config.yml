@@ -1,0 +1,83 @@
+# =============================================================
+#  GTA VI DETONA BR — configuração central do site (Jekyll)
+#  Leia AGENTS.md antes de editar. Tudo que é "global" fica aqui.
+# =============================================================
+
+title: "GTA VI Detona BR"
+tagline: "O portal brasileiro mais insano sobre GTA VI"
+description: >-
+  Notícias diárias, cheats, dicas, easter eggs, descobertas e especulações sobre
+  GTA VI (e o futuro GTA VII). Portal de fã brasileiro, independente e não oficial.
+lang: pt-BR
+locale: pt_BR
+timezone: America/Sao_Paulo
+
+# URL pública. Para GitHub Pages de projeto: https://USUARIO.github.io + baseurl /gtavi
+# Se um dia usar domínio próprio (recomendado p/ anúncios), troque url e deixe baseurl: ""
+url: "https://superaplicativos.github.io"
+baseurl: "/gtavi"
+
+author:
+  name: "Equipe GTA VI Detona BR"
+
+# ---------- Redes sociais ----------
+social:
+  youtube: "https://www.youtube.com/results?search_query=GTA+VI+Detona+BR"   # TROCAR pelo link do canal (ex.: https://www.youtube.com/@seucanal)
+  youtube_label: "GTA VI Detona BR no YouTube"
+  instagram: ""
+  tiktok: ""
+  x: ""
+
+# ---------- Lançamento (usado no contador do hero) ----------
+launch_date: "2026-11-19T00:00:00-03:00"
+
+# ---------- Anúncios (ver docs/MONETIZACAO.md) ----------
+ads:
+  enabled: false          # true quando a rede aprovar
+  provider: "adsense"     # adsense | custom
+  adsense_client: ""      # ex.: ca-pub-1234567890123456
+  slots:                  # IDs dos blocos criados no painel do AdSense
+    top: ""
+    infeed: ""
+    article: ""
+    sidebar: ""
+  show_placeholders: false   # true só para ver onde os banners aparecem
+
+# ---------- Analytics (opcional) ----------
+analytics:
+  ga4_id: ""              # ex.: G-XXXXXXX
+
+# ---------- Jekyll ----------
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+highlighter: rouge
+future: false
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values:
+      layout: post
+      author: "Equipe GTA VI Detona BR"
+  - scope: { path: "" }
+    values:
+      image: /assets/img/og-default.png
+
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - README.md
+  - docs/
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
