@@ -2,6 +2,9 @@
 title: "GTA VI já está disponível: horário, plataformas e como jogar pela nuvem"
 date: 2026-11-19 08:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-vi-ja-esta-disponivel.jpg"
+cover_credit: "Imagem: Xbox Wire"
+cover_credit_url: "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/"
 imagem_pagina: "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/"
 imagem_fonte: "Xbox Wire"
 cover_fonte: foto

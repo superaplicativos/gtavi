@@ -2,6 +2,9 @@
 title: "10 dicas para começar bem em GTA VI (sem spoilers)"
 date: 2026-11-20 15:00:00 -0300
 categoria: dicas
+cover: "/assets/img/posts/dicas-iniciantes-gta-vi.jpg"
+cover_credit: "Imagem: TechRadar"
+cover_credit_url: "https://www.techradar.com/live/news/gta-6-launch-day-november-19"
 imagem_pagina: "https://www.techradar.com/live/news/gta-6-launch-day-november-19"
 imagem_fonte: "TechRadar"
 cover_fonte: foto

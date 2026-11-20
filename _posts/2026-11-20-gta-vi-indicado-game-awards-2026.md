@@ -2,6 +2,9 @@
 title: "GTA VI disputa Jogo do Ano no The Game Awards 2026 — e mais sete prêmios"
 date: 2026-11-20 10:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-vi-indicado-game-awards-2026.jpg"
+cover_credit: "Imagem: VGTimes"
+cover_credit_url: "https://vgtimes.com/games/gta-6/news/"
 imagem_pagina: "https://vgtimes.com/games/gta-6/news/"
 imagem_fonte: "VGTimes"
 cover_fonte: ia

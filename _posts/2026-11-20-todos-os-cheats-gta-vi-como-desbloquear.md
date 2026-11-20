@@ -2,6 +2,9 @@
 title: "Cheats de GTA VI: quantos existem, categorias e como desbloquear"
 date: 2026-11-20 16:00:00 -0300
 categoria: cheats
+cover: "/assets/img/posts/todos-os-cheats-gta-vi-como-desbloquear.jpg"
+cover_credit: "Imagem: Dexerto"
+cover_credit_url: "https://www.dexerto.com/wikis/gta-6/cheat-codes/"
 imagem_pagina: "https://www.dexerto.com/wikis/gta-6/cheat-codes/"
 imagem_fonte: "Dexerto"
 cover_fonte: ia
