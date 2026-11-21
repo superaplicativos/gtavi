@@ -2,6 +2,9 @@
 title: "Como ganhar dinheiro rápido em GTA VI: os melhores métodos do começo do jogo"
 date: 2026-11-21 07:00:00 -0300
 categoria: dicas
+cover: "/assets/img/posts/como-ganhar-dinheiro-rapido-gta-vi.jpg"
+cover_credit: "Imagem: Shacknews"
+cover_credit_url: "https://www.shacknews.com/article/151427/disable-vehicle-trackers-gta6"
 featured: true
 especulacao: false
 cover_text: "Grana"
@@ -13,8 +16,14 @@ cover_prompt: "sports car parked on a neon-lit Miami style avenue at night, palm
 galeria:
   - busca: "Miami skyline night"
     legenda: "Vice City tem muita grana para quem sabe onde procurar"
+    src: "/assets/img/posts/como-ganhar-dinheiro-rapido-gta-vi-1.jpg"
+    credito: "Foto: Dori / CC BY-SA 3.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Downtown_Miami_skyline_20100305.jpg"
   - busca: "Florida Keys bridge"
     legenda: "Os Keys da vida real, que inspiram o clima de Leonida"
+    src: "/assets/img/posts/como-ganhar-dinheiro-rapido-gta-vi-2.jpg"
+    credito: "Foto: Sheeba Samuel / CC BY-SA 4.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Bahia_Honda_Rail_Bridge_Florida_Keys.jpg"
 description: "Guia simples para juntar dinheiro no começo de GTA VI: vender carros roubados para o Moses, regra dos rastreadores, assaltos e como não perder a grana ao morrer."
 tags: [dinheiro, guia, moses, carros-roubados, iniciantes]
 fontes:
