@@ -29,13 +29,13 @@ cover_text: "Segredos"
 description: "Ovos de Páscoa literais no topo de uma torre, o Pé-Grande de volta com outro nome, um cachorro de jet ski e referências a outros jogos da Rockstar."
 tags: [easter-eggs, segredos, pe-grande, skunk-ape, referencias]
 fontes:
-  - nome: "GameSpot — GTA 6 has a hilarious riff on Easter eggs"
+  - nome: "GameSpot: GTA 6 has a hilarious riff on Easter eggs"
     url: "https://www.gamespot.com/articles/gta-6-has-a-hilarious-riff-on-easter-eggs/"
-  - nome: "Kotaku — GTA 6 launch live updates"
+  - nome: "Kotaku: GTA 6 launch live updates"
     url: "https://kotaku.com/live-updates-on-gta-6-the-biggest-launch-in-gaming-history-2000758030"
-  - nome: "ComicBook — 5 easter eggs após o lançamento"
+  - nome: "ComicBook: 5 easter eggs após o lançamento"
     url: "https://comicbook.com/gaming/list/5-most-exciting-gta-6-easter-eggs-players-have-found-after-launch-day/"
-  - nome: "TechRadar — GTA 6 launch day live"
+  - nome: "TechRadar: GTA 6 launch day live"
     url: "https://www.techradar.com/live/news/gta-6-launch-day-november-19"
 ---
 
@@ -45,7 +45,7 @@ Nem 48 horas depois do lançamento e a comunidade já está desmontando Leonida 
 
 ## ✅ O "easter egg" literal da torre de rádio
 
-O melhor trocadilho do jogo. Escale a **torre de rádio mais alta do mapa** — a subida leva uns **seis a sete minutos** — e lá em cima existe um ninho com **ovos pintados**. Sim: um *easter egg* de verdade.
+O melhor trocadilho do jogo. Escale a **torre de rádio mais alta do mapa**, a subida leva uns **seis a sete minutos**, e lá em cima existe um ninho com **ovos pintados**. Sim: um *easter egg* de verdade.
 
 E não acaba aí: dá para pegar um dos ovos e arremessar lá de cima. Os primeiros relatos dizem que ele acaba acertando um NPC com cara de corretor de imóveis ou advogado picareta. A Rockstar sendo a Rockstar.
 
@@ -80,4 +80,4 @@ Um site menor fala em **mais de 50 encontrados na primeira semana**, mas o núme
 
 ---
 
-Achou algum? Manda pra gente pela página de [contato]({{ '/contato/' | relative_url }}) — os melhores achados vão para o [canal]({{ site.social.youtube }}) com crédito.
+Achou algum? Manda pra gente pela página de [contato]({{ '/contato/' | relative_url }}), os melhores achados vão para o [canal]({{ site.social.youtube }}) com crédito.

@@ -43,9 +43,9 @@ descobertas:
   icon: "i-scope"
 
 gta-vii:
-  name: "GTA VII (Especulação)"
+  name: "GTA VII (Rumores)"
   short: "GTA VII"
-  description: "Rumores, pistas e teorias sobre o próximo GTA. Tudo marcado como especulação."
+  description: "Rumores, pistas e teorias sobre o próximo GTA. Sempre com a fonte de cada informação."
   color: "#9b5cff"
   color2: "#2a0a5e"
   icon: "i-crystal"

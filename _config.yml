@@ -1,12 +1,12 @@
 # =============================================================
-#  GTA VI DETONA BR — configuração central do site (Jekyll)
+#  GTA VI DETONA BR: configuração central do site (Jekyll)
 #  Leia AGENTS.md antes de editar. Tudo que é "global" fica aqui.
 # =============================================================
 
 title: "GTA VI Detona BR"
 tagline: "O portal brasileiro mais insano sobre GTA VI"
 description: >-
-  Notícias diárias, cheats, dicas, easter eggs, descobertas e especulações sobre
+  Notícias diárias, cheats, dicas, easter eggs, descobertas e rumores sobre
   GTA VI (e o futuro GTA VII). Portal de fã brasileiro, independente e não oficial.
 lang: pt-BR
 locale: pt_BR

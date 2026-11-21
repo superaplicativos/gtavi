@@ -5,8 +5,8 @@ categoria: noticias
 featured: false
 especulacao: false
 cover_text: "Patch"
-imagem_pagina: "https://..."   # página com a imagem do jogo (Rockstar Newswire ou a matéria-fonte)
-imagem_fonte: "Rockstar Games" # nome exibido no crédito
+imagem_pagina: "https://..."   # matéria de portal especializado/comunidade (nunca Rockstar oficial)
+imagem_fonte: "IGN"           # nome exibido no crédito
 cover_fonte: ia            # reserva: foto (real, licença livre) ou ia
 imagem_busca: "Miami skyline night"   # em inglês, usado se cover_fonte: foto
 cover_prompt: "cinematic scene in english describing the cover, no characters, no logos, no text"
@@ -18,7 +18,7 @@ tags: [gta-vi, tag-dois, tag-tres]
 # youtube: ID_DO_VIDEO
 # cover: /assets/img/posts/minha-imagem.jpg
 fontes:
-  - nome: "Veículo — título da matéria"
+  - nome: "Veículo: título da matéria"
     url: "https://..."
   - nome: "Segunda fonte"
     url: "https://..."

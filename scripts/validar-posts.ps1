@@ -27,6 +27,11 @@ Get-ChildItem (Join-Path $root "_posts") -Filter *.md | ForEach-Object {
     } else { $bad += "date em formato inválido (use 2026-11-21 09:00:00 -0300)" }
     foreach ($line in ($fm -split "`n")) { if ($line -match '^(title|description):\s*"(.*)"\s*$' -and $Matches[2] -match '(?<!\\)"') { $bad += "aspas duplas soltas em $($Matches[1])" } }
   }
+  $em = [string][char]0x2014; $en = [string][char]0x2013
+  if ($txt.Contains($em) -or $txt.Contains($en)) { $bad += 'tem travessao (troque por virgula, dois-pontos ou ponto)' }
+  $chk = $txt -replace '(?m)^especulacao:.*$', ''
+  if ($chk -match '(?i)especula') { $bad += 'tem a palavra especulacao (use rumor ou teoria)' }
+  if ($txt -match 'rockstargames\.com') { $bad += 'usa pagina oficial da Rockstar (use portais especializados)' }
   if ($bad.Count) { $errors += $bad.Count; Write-Host "ERRO  $($f.Name)" -ForegroundColor Red; $bad | ForEach-Object { Write-Host "      - $_" } }
   else { Write-Host "ok    $($f.Name)" -ForegroundColor Green }
 }

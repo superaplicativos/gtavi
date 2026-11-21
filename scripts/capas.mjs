@@ -180,7 +180,9 @@ async function obter({ fonte, busca, prompt, seed, usados, origem, extras = [] }
   if (origem && (origem.url || origem.pagina)) tentativas.push(origem);
   for (const u of extras) if (!tentativas.some((t) => t.pagina === u)) tentativas.push({ pagina: u, nome: "" });
   const erros = [];
+  const BLOQUEADOS = /(^|\.)rockstargames\.com$|(^|\.)take2games\.com$/i; // nunca usar páginas oficiais
   for (const t of tentativas) {
+    if (BLOQUEADOS.test(host(t.pagina || t.url))) { erros.push(`${host(t.pagina || t.url)}: fonte oficial ignorada`); continue; }
     try {
       const r = await imagemDaFonte(t);
       if (usados.has(r.creditUrl)) throw new Error("imagem já usada neste post");

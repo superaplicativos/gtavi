@@ -1,4 +1,4 @@
-/* GTA VI DETONA BR — interações (sem dependências) */
+/* GTA VI DETONA BR: interações (sem dependências) */
 (function () {
   "use strict";
   var $ = function (s, r) { return (r || document).querySelector(s); };

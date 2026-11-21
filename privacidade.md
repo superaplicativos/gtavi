@@ -7,7 +7,7 @@ permalink: /privacidade/
 
 _Última atualização: 20 de novembro de 2026._
 
-Esta política explica como o **{{ site.title }}** trata informações de visitantes, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
+Esta política explica como o **{{ site.title }}** trata informações de visitantes, em conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
 
 ## Dados que coletamos
 

@@ -13,7 +13,7 @@ cover_text: "Crash"
 description: "Jogadores relatam fechamentos inesperados no PS5 mesmo após reinstalar. A suspeita principal é superaquecimento. Veja os passos básicos enquanto não sai um patch."
 tags: [ps5, crash, travamento, suporte, patch]
 fontes:
-  - nome: "VGTimes — GTA 6 news"
+  - nome: "VGTimes: GTA 6 news"
     url: "https://vgtimes.com/games/gta-6/news/"
 ---
 
@@ -27,7 +27,7 @@ Nem tudo são flores em Leonida. Desde o lançamento, parte dos jogadores de **P
 2. **Limpe a poeira** das entradas de ar (com o console desligado e da tomada).
 3. **Atualize o sistema** do PS5 e confira se há atualização do jogo.
 4. **Modo de repouso:** se o crash acontece após voltar do repouso, teste fechar o jogo antes.
-5. **Reconstruir banco de dados** (pelo Modo de Segurança) — não apaga seus saves.
+5. **Reconstruir banco de dados** (pelo Modo de Segurança), não apaga seus saves.
 6. **Relate ao suporte** da Rockstar com o código de erro: quanto mais relatos, mais rápido sai correção.
 
 ## E no Xbox?

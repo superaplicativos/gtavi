@@ -1,7 +1,7 @@
 ---
 layout: default
 body_class: page page--home
-title: "GTA VI Detona BR — notícias, cheats, dicas e easter eggs de GTA VI"
+title: "GTA VI Detona BR: notícias, cheats, dicas e easter eggs de GTA VI"
 ---
 {% assign featured = site.posts | where: "featured", true %}
 {% assign hero_post = featured.first | default: site.posts.first %}
@@ -25,7 +25,7 @@ title: "GTA VI Detona BR — notícias, cheats, dicas e easter eggs de GTA VI"
       <span class="t-gta">GTA</span><span class="t-vi">VI</span>
     </h1>
     <div class="hero__brand">DETONA <b>BR</b></div>
-    <p class="hero__lede">O portal brasileiro que vive dentro de Leonida. Notícias todo dia, cheats testados, easter eggs, descobertas da comunidade — e as primeiras pistas de GTA VII.</p>
+    <p class="hero__lede">O portal brasileiro que vive dentro de Leonida. Notícias todo dia, cheats testados, easter eggs, descobertas da comunidade, e as primeiras pistas de GTA VII.</p>
     <div class="hero__ctas">
       <a class="btn btn--primary" href="{{ hero_post.url | relative_url }}">Matéria em destaque <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--ghost" href="{{ '/categorias/cheats/' | relative_url }}">Ver todos os cheats</a>
@@ -79,9 +79,9 @@ title: "GTA VI Detona BR — notícias, cheats, dicas e easter eggs de GTA VI"
 <section class="vii reveal">
   <div class="vii__bg" aria-hidden="true"><span>VII</span></div>
   <div class="wrap vii__inner">
-    <span class="kicker">ZONA DE ESPECULAÇÃO</span>
+    <span class="kicker">ZONA DE RUMORES</span>
     <h2>O próximo capítulo <em>já começou?</em></h2>
-    <p>Rumores, declarações de executivos e teorias da comunidade sobre GTA VII. Tudo separado e marcado como especulação — aqui a gente não vende boato como fato.</p>
+    <p>Rumores, declarações de executivos e teorias da comunidade sobre GTA VII. Sempre com a fonte de cada informação.</p>
     <div class="grid grid--3">
       {% for p in vii limit: 3 %}{% include card.html post=p size="sm" %}{% endfor %}
     </div>

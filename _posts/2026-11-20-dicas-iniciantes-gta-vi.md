@@ -25,7 +25,7 @@ cover_text: "10 dicas"
 description: "Do salvamento automático que está confundindo muita gente até a melhor forma de explorar Leonida: um guia rápido para as primeiras horas."
 tags: [dicas, iniciantes, guia, salvamento]
 fontes:
-  - nome: "TechRadar — GTA 6 secrets, tips and reactions (launch day)"
+  - nome: "TechRadar: GTA 6 secrets, tips and reactions (launch day)"
     url: "https://www.techradar.com/live/news/gta-6-launch-day-november-19"
 ---
 
@@ -33,7 +33,7 @@ Leonida é gigante e o jogo não pega na sua mão. Estas dicas valem para as pri
 
 ## 1. Entenda o salvamento automático
 
-Logo no lançamento, muita gente ficou confusa com o **autosave**. Antes de desligar o console, confira se apareceu o indicador de salvamento — e, sempre que puder, faça um **salvamento manual** em um local seguro.
+Logo no lançamento, muita gente ficou confusa com o **autosave**. Antes de desligar o console, confira se apareceu o indicador de salvamento, e, sempre que puder, faça um **salvamento manual** em um local seguro.
 
 ## 2. Não corra a história
 
@@ -45,7 +45,7 @@ Gaste dois minutos nas configurações: sensibilidade da mira, campo de visão e
 
 ## 4. Preste atenção na fauna
 
-Os pântanos de Leonida estão cheios de animais — e alguns encontros são, digamos, **inesperados**. Cuidado ao nadar perto de margens.
+Os pântanos de Leonida estão cheios de animais, e alguns encontros são, digamos, **inesperados**. Cuidado ao nadar perto de margens.
 
 ## 5. Escale tudo que der
 
@@ -69,7 +69,7 @@ Vídeos prometendo glitch de dinheiro ou download de mods no console costumam se
 
 ## 10. Jogue no seu ritmo
 
-GTA VI vai ser assunto por anos. Não precisa zerar em uma semana — aproveite a viagem.
+GTA VI vai ser assunto por anos. Não precisa zerar em uma semana, aproveite a viagem.
 
 ---
 

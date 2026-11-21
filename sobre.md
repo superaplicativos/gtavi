@@ -5,7 +5,7 @@ description: "Quem somos e como trabalhamos."
 permalink: /sobre/
 ---
 
-O **GTA VI Detona BR** é um portal brasileiro, independente e feito por fãs, dedicado 100% ao universo de *Grand Theft Auto VI* — e, claro, ao que vem depois dele.
+O **GTA VI Detona BR** é um portal brasileiro, independente e feito por fãs, dedicado 100% ao universo de *Grand Theft Auto VI*, e, claro, ao que vem depois dele.
 
 ## O que você encontra aqui
 
@@ -13,12 +13,12 @@ O **GTA VI Detona BR** é um portal brasileiro, independente e feito por fãs, d
 - **Cheats e códigos** organizados e checados;
 - **Dicas e guias** para aproveitar Leonida;
 - **Easter eggs e descobertas** da comunidade;
-- **Especulação sobre GTA VII**, sempre identificada como tal;
+- **Rumores e teorias sobre GTA VII**, sempre com a fonte;
 - **Vídeos** do nosso [canal no YouTube]({{ site.social.youtube }}).
 
 ## Nossa política editorial
 
-1. **Fato é fato, rumor é rumor.** Todo conteúdo especulativo recebe o selo *Especulação*.
+1. **Fato é fato, rumor é rumor.** Todo rumor recebe o selo *Rumor*.
 2. **Citamos as fontes** no fim de cada matéria.
 3. **Escrevemos com nossas palavras.** Não copiamos textos de outros sites.
 4. **Corrigimos rápido.** Se algo mudar, a matéria é atualizada e a data de atualização aparece no topo.

@@ -19,10 +19,10 @@ galeria:
     src: "/assets/img/posts/rockstar-anuncia-gta-vi-festival-miami-2.jpg"
     credito: "Imagem ilustrativa gerada por IA"
 cover_text: "Festival"
-description: "A celebração do lançamento acontece em 21 de novembro no Mana Wynwood, em Miami — a cidade real que inspira Vice City."
+description: "A celebração do lançamento acontece em 21 de novembro no Mana Wynwood, em Miami, a cidade real que inspira Vice City."
 tags: [evento, musica, miami, vice-city, trilha-sonora]
 fontes:
-  - nome: "VGTimes — GTA 6 news"
+  - nome: "VGTimes: GTA 6 news"
     url: "https://vgtimes.com/games/gta-6/news/"
 ---
 
@@ -30,7 +30,7 @@ A Rockstar resolveu levar Leonida para o mundo real. O estúdio anunciou **"GTA 
 
 ## Por que Miami
 
-Vice City sempre foi a versão GTA de Miami — e Wynwood, bairro famoso pelos murais gigantes de arte urbana, combina perfeitamente com a estética neon do jogo.
+Vice City sempre foi a versão GTA de Miami, e Wynwood, bairro famoso pelos murais gigantes de arte urbana, combina perfeitamente com a estética neon do jogo.
 
 ## O que esperar
 

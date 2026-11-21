@@ -25,11 +25,11 @@ cover_text: "Chegou"
 description: "Depois de dois adiamentos, GTA VI saiu em 19 de novembro de 2026 para PS5 e Xbox Series X|S, com liberação à meia-noite no horário local e opção de jogar no Xbox Cloud Gaming."
 tags: [lancamento, ps5, xbox, xbox-cloud, data]
 fontes:
-  - nome: "Xbox Wire — GTA VI no Xbox Cloud Gaming"
+  - nome: "Xbox Wire: GTA VI no Xbox Cloud Gaming"
     url: "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/"
-  - nome: "Fragster — GTA 6 Is Out Now"
+  - nome: "Fragster: GTA 6 Is Out Now"
     url: "https://www.fragster.com/gta-6-launch-november-2026/"
-  - nome: "TechRadar — GTA 6 delayed again, but it'll still ship in 2026"
+  - nome: "TechRadar: GTA 6 delayed again, but it'll still ship in 2026"
     url: "https://www.techradar.com/gaming/grand-theft-auto-6-delayed-again-but-itll-still-ship-in-2026"
 ---
 
@@ -50,10 +50,10 @@ Pra quem chegou agora, um resumo rápido:
 - **Dezembro de 2023:** primeiro trailer, que virou um dos vídeos mais vistos da história do YouTube.
 - **2025:** primeira janela de lançamento, que acabou adiada para **26 de maio de 2026**.
 - **Novembro de 2025:** novo adiamento, agora para **19 de novembro de 2026**.
-- **19 de novembro de 2026:** lançamento — sem mais atrasos.
+- **19 de novembro de 2026:** lançamento, sem mais atrasos.
 
 ## E o PC?
 
-Ainda **sem data**. Escrevemos uma matéria só sobre isso: [GTA VI no PC — o que se sabe]({{ '/2026/11/20/gta-vi-pc-o-que-se-sabe/' | relative_url }}).
+Ainda **sem data**. Escrevemos uma matéria só sobre isso: [GTA VI no PC, o que se sabe]({{ '/2026/11/20/gta-vi-pc-o-que-se-sabe/' | relative_url }}).
 
 Bem-vindo a Leonida. Daqui pra frente, é notícia todo dia.

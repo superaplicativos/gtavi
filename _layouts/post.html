@@ -11,7 +11,7 @@ body_class: page page--post
   </div>
   <div class="wrap post-hero__inner">
     <a class="chip chip--lg" href="{{ '/categorias/' | append: page.categoria | append: '/' | relative_url }}">{{ cat.name | default: page.categoria }}</a>
-    {% if page.especulacao %}<span class="chip chip--warn chip--lg">ESPECULAÇÃO · NÃO CONFIRMADO</span>{% endif %}
+    {% if page.especulacao %}<span class="chip chip--warn chip--lg">RUMOR</span>{% endif %}
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.description %}<p class="post-lede">{{ page.description }}</p>{% endif %}
     <div class="post-meta">

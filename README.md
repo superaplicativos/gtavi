@@ -1,6 +1,6 @@
 # GTA VI Detona BR
 
-Portal brasileiro de fãs (não oficial) sobre GTA VI: notícias diárias, cheats, dicas, easter eggs, descobertas e especulação sobre GTA VII.
+Portal brasileiro de fãs (não oficial) sobre GTA VI: notícias diárias, cheats, dicas, easter eggs, descobertas e rumores sobre GTA VII.
 
 - **Site:** publicado via GitHub Pages a partir da branch `main` (Jekyll nativo, sem build próprio).
 - **Para IAs / automação:** leia [`AGENTS.md`](AGENTS.md) e [`docs/AUTOMACAO.md`](docs/AUTOMACAO.md).

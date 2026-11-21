@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Leia e siga **AGENTS.md** — é o manual completo para publicar e editar conteúdo neste site.
+Leia e siga **AGENTS.md**, é o manual completo para publicar e editar conteúdo neste site.
 
 Resumo rápido:
 - Posts em `_posts/AAAA-MM-DD-slug.md` (modelo em `docs/TEMPLATE-POST.md`).
