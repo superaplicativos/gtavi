@@ -8,11 +8,15 @@
 <div class="grain" aria-hidden="true"></div>
 <div class="cursor-glow" aria-hidden="true"></div>
 {% include header.html %}
+<div class="wrap ad-wrap">{% include ad.html slot="top" %}</div>
 <main id="conteudo">
 {{ content }}
 </main>
 {% include footer.html %}
+<div class="wrap ad-wrap">{% include ad.html slot="footer" %}</div>
+{% include ads/socialbar.html %}
 <script>window.SITE_BASE = "{{ site.baseurl }}"; window.LAUNCH = "{{ site.launch_date }}";</script>
 <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/ads.js' | relative_url }}" defer></script>
 </body>
 </html>

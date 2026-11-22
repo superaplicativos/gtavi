@@ -32,20 +32,32 @@ social:
 launch_date: "2026-11-19T00:00:00-03:00"
 
 # ---------- Anúncios (ver docs/MONETIZACAO.md) ----------
+# Trocar de rede = mudar "provider" e ligar/desligar "enabled". Os códigos de
+# cada rede ficam em _includes/ads/ (um arquivo por rede, um bloco por slot).
 ads:
-  enabled: false          # true quando a rede aprovar
-  provider: "adsense"     # adsense | custom
-  adsense_client: ""      # ex.: ca-pub-1234567890123456
-  slots:                  # IDs dos blocos criados no painel do AdSense
+  enabled: true             # false = remove TODOS os banners do site de uma vez
+  provider: "adsterra"      # adsterra | adsense | custom
+  socialbar: true           # Social Bar flutuante (Adsterra) em todas as páginas
+  show_placeholders: false  # true só para ver onde os banners aparecem
+  adsense_client: ""        # ex.: ca-pub-1234567890123456 (quando provider = adsense)
+  slots:                    # IDs dos blocos criados no painel do AdSense
     top: ""
     infeed: ""
     article: ""
     sidebar: ""
-  show_placeholders: false   # true só para ver onde os banners aparecem
 
 # ---------- Analytics (opcional) ----------
 analytics:
   ga4_id: ""              # ex.: G-XXXXXXX
+
+# ---------- Indexação / consoles de busca (opcional) ----------
+# Cadastre o site e cole o código de verificação aqui; a meta tag é gerada
+# automaticamente pelo jekyll-seo-tag em todas as páginas.
+# Google: https://search.google.com/search-console  |  Bing: https://www.bing.com/webmasters
+webmaster_verifications:
+  google: ""
+  bing: ""
+  yandex: ""
 
 # ---------- Jekyll ----------
 permalink: /:year/:month/:day/:title/

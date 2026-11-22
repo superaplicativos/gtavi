@@ -1,5 +1,11 @@
 {% comment %}
-  Cole aqui o código de banner de outra rede (Adsterra "Banner", Media.net etc.) quando ads.provider = "custom".
-  include.slot diz qual posição está sendo renderizada (top, infeed, article, sidebar).
-  Use SOMENTE formatos de banner/display. Nada de pop-under, social bar ou redirecionamento.
+  Área para código de OUTRA rede (Media.net, Rubicon, etc.).
+  Como usar: em _config.yml troque ads.provider para "custom" e cole aqui
+  o código do banner. A variável include.slot diz qual posição está sendo
+  renderizada (top, infeed, article, sidebar, footer) - use um if por slot
+  se quiser banners diferentes em cada posição.
+  As redes já cadastradas ficam em arquivos próprios na mesma pasta:
+  - ads/adsterra.html   (banners Adsterra por slot)
+  - ads/socialbar.html  (Social Bar Adsterra, global)
+  Formatos suportados aqui: banner/display. Popunder e Direct Link não.
 {% endcomment %}

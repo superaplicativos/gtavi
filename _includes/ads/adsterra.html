@@ -1,0 +1,90 @@
+{% comment %}
+  ============================================================
+  BANNERS ADSTERRA DO SITE (provider: "adsterra" em _config.yml)
+  ------------------------------------------------------------
+  Para trocar QUALQUER banner: gere o código novo no painel da
+  rede e substitua APENAS o bloco do slot correspondente abaixo.
+
+  Slots em uso:
+  - top      -> banner 728x90 no topo de TODAS as páginas
+  - footer   -> banner 728x90 no rodapé de TODAS as páginas
+  - article  -> banner 300x250 no fim do texto de cada post
+  - sidebar  -> banner 300x250 na barra lateral de cada post
+  - infeed   -> banner 300x250 no meio dos cards da home
+
+  O wrapper .ad__frame (data-w/data-h) + assets/js/ads.js deixam
+  o banner responsivo em telas pequenas (escala proporcional).
+  Social Bar fica separado, em _includes/ads/socialbar.html.
+  ============================================================
+{% endcomment %}
+
+{% if include.slot == "top" %}
+<div class="ad__frame" data-w="728" data-h="90">
+<script>
+  atOptions = {
+    'key' : '0534f8c4bf65c271da140c45040da625',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/0534f8c4bf65c271da140c45040da625"></script>
+</div>
+
+{% elsif include.slot == "footer" %}
+<div class="ad__frame" data-w="728" data-h="90">
+<script>
+  atOptions = {
+    'key' : '0534f8c4bf65c271da140c45040da625',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/0534f8c4bf65c271da140c45040da625"></script>
+</div>
+
+{% elsif include.slot == "article" %}
+<div class="ad__frame" data-w="300" data-h="250">
+<script>
+  atOptions = {
+    'key' : '0071d3c332c1cacde96bdf0b0502f2ae',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/0071d3c332c1cacde96bdf0b0502f2ae"></script>
+</div>
+
+{% elsif include.slot == "sidebar" %}
+<div class="ad__frame" data-w="300" data-h="250">
+<script>
+  atOptions = {
+    'key' : '0071d3c332c1cacde96bdf0b0502f2ae',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/0071d3c332c1cacde96bdf0b0502f2ae"></script>
+</div>
+
+{% elsif include.slot == "infeed" %}
+<div class="ad__frame" data-w="300" data-h="250">
+<script>
+  atOptions = {
+    'key' : '0071d3c332c1cacde96bdf0b0502f2ae',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/0071d3c332c1cacde96bdf0b0502f2ae"></script>
+</div>
+{% endif %}

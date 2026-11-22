@@ -1,0 +1,57 @@
+name: Indexar (IndexNow)
+
+# Ferramenta de indexação automática: envia TODAS as URLs do sitemap
+# para o IndexNow (Bing, Yandex, Seznam, Naver) todo dia, logo depois
+# da publicação do post diário. Não depende da IA de posts.
+# Rode manualmente quando quiser: Actions -> Indexar -> Run workflow.
+# A chave de verificação fica no arquivo <chave>.txt na raiz do site.
+
+on:
+  schedule:
+    - cron: "23 12 * * *"   # 12:23 UTC = 09:23 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexar
+  cancel-in-progress: true
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar URLs do sitemap ao IndexNow
+        env:
+          SITEMAP: https://superaplicativos.github.io/gtavi/sitemap.xml
+          KEY: 7f4469997b884b5981b06aa2cc4bde57
+        run: |
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          key = os.environ['KEY']
+          sitemap = os.environ['SITEMAP']
+          base = sitemap.rsplit('/', 1)[0]
+          xml = urllib.request.urlopen(sitemap, timeout=30).read().decode('utf-8')
+          urls = sorted({u.strip() for u in re.findall(r'<loc>([^<]+)</loc>', xml) if u.strip()})
+          print(f'{len(urls)} URLs encontradas no sitemap')
+          if not urls:
+              raise SystemExit(0)
+          payload = {
+              'host': 'superaplicativos.github.io',
+              'key': key,
+              'keyLocation': f'{base}/{key}.txt',
+              'urlList': urls,
+          }
+          req = urllib.request.Request(
+              'https://api.indexnow.org/indexnow',
+              data=json.dumps(payload).encode('utf-8'),
+              headers={'Content-Type': 'application/json; charset=utf-8'},
+              method='POST',
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print('IndexNow respondeu HTTP', r.status)
+          except Exception as e:
+              print('IndexNow falhou (nao bloqueia):', e)
+          PY

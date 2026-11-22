@@ -1,12 +1,19 @@
 {% comment %}
-  Banner não intrusivo. Uso: {% include ad.html slot="top" %}  (slots: top, infeed, article, sidebar)
+  Banner não intrusivo. Uso: {% include ad.html slot="top" %}  (slots: top, infeed, article, sidebar, footer)
   Liga/desliga em _config.yml -> ads. Nada é renderizado enquanto ads.enabled = false.
+  O código de cada posição fica no arquivo da rede escolhida em ads.provider:
+  - adsterra -> _includes/ads/adsterra.html (banners por slot)
+  - adsense  -> blocos do painel do AdSense (site.ads.adsense_client + site.ads.slots)
+  - custom   -> _includes/ads/custom.html (cole aqui o código de outra rede)
+  Trocar de rede = trocar ads.provider em _config.yml. Os slots continuam nos mesmos lugares.
 {% endcomment %}
 {% assign _slot = include.slot | default: "top" %}
 {% if site.ads.enabled %}
 <aside class="ad ad--{{ _slot }}" aria-label="Publicidade">
   <span class="ad__label">Publicidade</span>
-  {% if site.ads.provider == "adsense" %}
+  {% if site.ads.provider == "adsterra" %}
+  {% include ads/adsterra.html slot=_slot %}
+  {% elsif site.ads.provider == "adsense" %}
   <ins class="adsbygoogle" style="display:block" data-ad-client="{{ site.ads.adsense_client }}" data-ad-slot="{{ site.ads.slots[_slot] }}" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   {% else %}

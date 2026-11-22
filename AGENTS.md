@@ -149,7 +149,7 @@ Para criar uma categoria nova (raro, evite inflar o menu):
 
 ## 8. Anúncios
 
-Configuração em `_config.yml` → `ads`. Detalhes completos em `docs/MONETIZACAO.md`. A IA **não** ativa anúncios nem cola códigos de rede sem pedido explícito do dono.
+Configuração em `_config.yml` → `ads`. Detalhes completos em `docs/MONETIZACAO.md`. A IA **não** ativa anúncios nem cola códigos de rede sem pedido explícito do dono. Os códigos das redes ficam em `_includes/ads/` (um arquivo por rede), configurados pelo dono: a IA não precisa mexer neles para nada, os banners aparecem sozinhos em qualquer post novo. A indexação (sitemap, IndexNow via workflow `indexar.yml`) também é automática e não depende da IA.
 
 ## 9. Checklist antes do commit
 

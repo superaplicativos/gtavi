@@ -14,7 +14,6 @@ body_class: page page--cat
   </div>
 </header>
 <section class="wrap">
-  {% include ad.html slot="top" %}
   {% if posts.size > 0 %}
   <div class="grid grid--3">
     {% for p in posts %}{% include card.html post=p size="md" %}{% endfor %}

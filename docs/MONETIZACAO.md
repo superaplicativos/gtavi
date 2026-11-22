@@ -35,20 +35,49 @@ Em `_config.yml`:
 ```yaml
 ads:
   enabled: true
-  provider: "adsense"
+  provider: "adsense"        # troque aqui para mudar de rede
+  socialbar: false           # Social Bar só existe na Adsterra; desligue no AdSense
   adsense_client: "ca-pub-XXXXXXXXXXXXXXXX"
   slots: { top: "111", infeed: "222", article: "333", sidebar: "444" }
 ```
 
 Cada slot é o ID de um bloco "Display" criado no painel do AdSense.
 
-## 2. Adsterra: plano B sem mínimo de tráfego
+### Como o sistema de anúncios funciona (desde 23/11/2026)
+
+As posições (slots) são fixas nos layouts e não mudam quando você troca de rede:
+
+| Slot | Onde aparece | Formato atual |
+|---|---|---|
+| `top` | Topo de TODAS as páginas (abaixo do menu) | 728×90 Adsterra |
+| `footer` | Rodapé de TODAS as páginas | 728×90 Adsterra |
+| `article` | Fim do texto de cada post | 300×250 Adsterra |
+| `sidebar` | Barra lateral de cada post | 300×250 Adsterra |
+| `infeed` | Meio dos cards da home | 300×250 Adsterra |
+
+- Códigos por rede: `_includes/ads/adsterra.html` (um bloco por slot), `_includes/ads/custom.html` (outra rede) e o AdSense usa os IDs de `site.ads.slots`.
+- Social Bar (barra flutuante global): `_includes/ads/socialbar.html`, liga/desliga com `ads.socialbar`.
+- Trocar de empresa: gere os códigos no painel da rede nova, cole no arquivo correspondente e mude `provider`. Ou apenas `enabled: false` para tirar tudo.
+- Os banners de 728×90 viram responsivos no celular via `assets/js/ads.js` (escala proporcional).
+- Posts novos publicados pela automação recebem os banners automaticamente (os slots moram nos layouts, não nos posts).
+
+## 2. Adsterra: rede em uso desde 23/11/2026
 
 - **Sem exigência de tráfego** e aprovação rápida (costuma sair em minutos ou horas).
 - Pagamento a partir de valores baixos (cerca de US$ 5 em alguns métodos; PayPal/transferência têm mínimos maiores), quinzenal.
-- **Use apenas "Banner"** (300×250, 728×90, 320×50). **Não ative** Popunder, Social Bar nem Direct Link, são exatamente os formatos intrusivos que você não quer e podem prejudicar a aprovação no AdSense depois.
+- **Ativa hoje**: banners 728×90 (topo e rodapé), 300×250 (fim do artigo, sidebar e meio da home) e Social Bar. Códigos em `_includes/ads/adsterra.html`; social bar em `_includes/ads/socialbar.html`.
+- **Teste A/B de redes**: para comparar com outra rede, mude `provider` e `enabled` em `_config.yml`. Para medir, use o GA4 (`analytics.ga4_id`) + o relatório de ganhos da rede.
+- ⚠️ **Atenção para o futuro AdSense**: Social Bar e formatos mais agressivos podem pesar na aprovação do AdSense depois. Quando for pedir AdSense, desligue a Social Bar (`socialbar: false`) e considere manter só banner.
 - Paga bem menos que o AdSense por mil visualizações.
-- Para ativar: `ads.provider: "custom"` e cole o código do banner em `_includes/ads/custom.html`.
+- Para usar outra rede: `ads.provider: "custom"` e cole o código em `_includes/ads/custom.html`.
+
+## 2.1 Indexação (ferramentas já instaladas)
+
+- `robots.txt` e `sitemap.xml` já são gerados automaticamente (jekyll-sitemap).
+- **IndexNow (Bing, Yandex, Seznam)**: o workflow `.github/workflows/indexar.yml` roda todo dia às 09:23 (Brasília), lê o sitemap e envia todas as URLs para `api.indexnow.org`. A chave do site fica em `<chave>.txt` na raiz. Para rodar manualmente: aba **Actions → Indexar → Run workflow**.
+- **Google**: não tem ping automático (foi descontinuado). Faça 1 vez: cadastre o site no [Search Console](https://search.google.com/search-console), cole o código de verificação em `_config.yml → webmaster_verifications.google` e envie o sitemap `sitemap.xml`.
+- Verificação do Bing/Yandex: mesma coisa, em `webmaster_verifications.bing/yandex`.
+- A IA de posts não precisa fazer nada para a indexação: tudo roda sozinho no GitHub.
 
 ## 3. Outras redes (para depois)
 
