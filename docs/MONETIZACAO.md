@@ -51,17 +51,17 @@ Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funcio
 | Slot | Onde aparece | Formato atual |
 |---|---|---|
 | `top` | Logo abaixo do cabeçalho grande — hero da home, cabeçalho do post e da categoria (**1 banner no celular, 3 lado a lado no PC**) | 3× 300×250 Adsterra |
-| `footer` | Rodapé de TODAS as páginas | 300×250 Adsterra |
+| `footer` | Rodapé de TODAS as páginas — **3 lado a lado no PC, 1 no celular** | 3× 300×250 Adsterra (fila) |
 | `article` | Fim do texto de cada post | 300×250 Adsterra |
 | `sidebar` | Barra lateral de cada post | 300×250 Adsterra |
-| `infeed` | Meio dos cards da home | 300×250 Adsterra |
+| `infeed` | Meio dos cards da home — **3 lado a lado no PC, 1 no celular** | 3× 300×250 Adsterra (fila) |
 
 - Códigos por rede: `_includes/ads/adsterra.html` (um bloco por slot), `_includes/ads/custom.html` (outra rede) e o AdSense usa os IDs de `site.ads.slots`.
 - Social Bar (barra flutuante global): **desligada em 23/11/2026 a pedido do dono** (era invasiva). Para voltar: `socialbar: true` em `_config.yml` (o código continua em `_includes/ads/socialbar.html`).
 - Banner horizontal 728×90 original está guardado em comentário no fim de `_includes/ads/adsterra.html` (ficava cortado no celular; para restaurar é só colar o bloco no slot desejado).
 - Trocar de empresa: gere os códigos no painel da rede nova, cole no arquivo correspondente e mude `provider`. Ou apenas `enabled: false` para tirar tudo.
 - Os banners viram responsivos no celular via `assets/js/ads.js` (escala proporcional, funciona mesmo quando a rede injeta o banner depois da página carregada).
-- **Fila do topo (3 no PC / 1 no celular)**: o primeiro banner é um tag estático; em telas ≥ 800px (PC/notebook, inclusive janela de meia tela) um script dentro de `.ad-top__row` escreve mais 2 cópias com `document.write` durante o carregamento — mesma mecânica dos tags estáticos, então a Adsterra processa igual. Em janela estreita os 3 encolhem juntos (flex nowrap — **nunca empilham**). No celular nada extra é carregado (nenhum anúncio escondido). As regras de layout da fila também estão embutidas num `<style>` no próprio include, para não depender do cache de `ads.css` (cache antigo de CSS empilhou os banners em 23/11/2026). Para mudar a quantidade/limite, ajuste o script do slot `top` em `_includes/ads/adsterra.html`.
+- **Filas (topo, meio da home e rodapé — 3 no PC / 1 no celular)**: cada fila tem 1 tag estático; em telas ≥ 800px um script dentro de cada `.ad-row` escreve mais 2 cópias com `document.write` durante o carregamento — mesma mecânica dos tags estáticos, então a Adsterra processa igual. Em janela estreita os 3 encolhem juntos (flex nowrap — **nunca empilham**). No celular nada extra é carregado (nenhum anúncio escondido). O HTML das filas é montado uma única vez no include (`{% capture ad_row %}`) e reaproveitado nos 3 slots. As regras de layout das filas estão embutidas num `<style>` no `_layouts/default.html` (não dependem do cache de `ads.css` — cache antigo de CSS empilhou os banners em 23/11/2026). Para mudar a quantidade/limite, ajuste o script `ad_row_script` em `_includes/ads/adsterra.html`.
 - Posts novos publicados pela automação recebem os banners automaticamente (os slots moram nos layouts, não nos posts).
 
 ## 2. Adsterra: rede em uso desde 23/11/2026

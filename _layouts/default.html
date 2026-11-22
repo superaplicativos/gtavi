@@ -2,6 +2,16 @@
 <html lang="{{ site.lang }}">
 <head>
 {% include head.html %}
+<style>
+/* Fila de banners 300x250 (topo, meio da home e rodape) — embutida no HTML
+   de proposito para nao depender do cache de assets/css/ads.css.
+   flex nowrap: os 3 banners ficam SEMPRE lado a lado em uma unica linha
+   (no PC >= 800px) e encolhem juntos em janela estreita; no celular so
+   o 1º item existe (os extras so sao escritos em telas grandes). */
+.ad-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:flex-start;gap:12px}
+.ad-row__item{flex:0 1 auto;min-width:0;width:300px;max-width:300px}
+.ad-row__item .ad__frame{margin:0}
+</style>
 </head>
 <body class="{{ page.body_class | default: 'page' }}">
 {% include icons.html %}
