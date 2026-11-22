@@ -2,6 +2,9 @@
 title: "Glitch no Xbox Series X faz GTA VI passar de 30 FPS, mas o jogo acelera"
 date: 2026-11-22 07:00:00 -0300
 categoria: descobertas
+cover: "/assets/img/posts/gta-vi-xbox-glitch-quick-resume-60-fps.webp"
+cover_credit: "Imagem: en.gamegpu.com"
+cover_credit_url: "https://en.gamegpu.com/news/igry/gta-vi-na-xbox-series-x-mozhno-zapustit-bystree-30-fps-cherez-quick-resume"
 featured: true
 especulacao: false
 cover_text: "60 FPS"
@@ -14,8 +17,13 @@ galeria:
   - pagina: "https://www.neowin.net/news/gta-vi-runs-at-60-fps-on-xbox-series-x-thanks-to-a-glitch-but-theres-a-major-catch/"
     fonte: "Neowin"
     legenda: "A matéria do Neowin sobre o glitch de taxa de quadros no Xbox Series X"
+    src: "/assets/img/posts/gta-vi-xbox-glitch-quick-resume-60-fps-1.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
   - busca: "Miami Beach Ocean Drive"
     legenda: "Miami Beach, uma das inspirações reais para o cenário de GTA VI"
+    src: "/assets/img/posts/gta-vi-xbox-glitch-quick-resume-60-fps-2.jpg"
+    credito: "Foto: Photograph: Radomianin / Public domain via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg"
 description: "Um jogador achou um glitch com o Quick Resume do Xbox Series X que destrava a taxa de quadros de GTA VI. Só tem um problema: o jogo inteiro fica em câmera rápida."
 tags: [glitch, xbox-series-x, quick-resume, 60-fps, desempenho]
 fontes:
