@@ -2,9 +2,12 @@
 .ad .ad__frame{position:relative;margin:0 auto;max-width:100%;overflow:hidden}
 .ad .ad__frame iframe{display:block;border:0;margin:0 auto}
 
-/* Topo: fila de banners 300x250 — 1 no celular; no PC (>=1000px) o script
+/* Topo: fila de banners 300x250 — 1 no celular; no PC (>=800px) o script
    dentro de .ad-top__row (_includes/ads/adsterra.html) escreve mais 2
-   cópias com document.write durante o carregamento => 3 lado a lado */
-.ad-top__row{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:20px}
-.ad-top__item{flex:0 0 auto}
+   cópias com document.write durante o carregamento => 3 lado a lado.
+   ATENÇÃO: as MESMAS regras abaixo também estão embutidas num <style> no
+   próprio include (adsterra.html) para não depender do cache deste arquivo.
+   flex nowrap = nunca empilha: os 3 encolhem juntos em janela estreita. */
+.ad-top__row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:flex-start;gap:12px}
+.ad-top__item{flex:0 1 auto;min-width:0;width:300px;max-width:300px}
 .ad-top__item .ad__frame{margin:0}

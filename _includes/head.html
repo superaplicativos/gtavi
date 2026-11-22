@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-<link rel="stylesheet" href="{{ '/assets/css/ads.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/ads.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 {% if site.ads.enabled and site.ads.provider == "adsense" and site.ads.adsense_client != "" %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.ads.adsense_client }}" crossorigin="anonymous"></script>
 {% endif %}

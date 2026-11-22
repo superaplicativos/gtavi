@@ -21,11 +21,19 @@
 
 {% if include.slot == "top" %}
 {% comment %}
-  Fila do topo: 1 banner 300x250 no celular; em telas >= 1000px o script
-  abaixo escreve mais 2 cópias com document.write DURANTE o carregamento
-  (mesma mecânica dos tags estáticos, então funciona igual à Adsterra)
-  => 3 banners lado a lado no PC. Nada é carregado escondido no celular.
+  Fila do topo: 1 banner 300x250 no celular; em telas >= 800px (PC/notebook,
+  inclusive janela de meia tela) o script abaixo escreve mais 2 copias com
+  document.write DURANTE o carregamento (mesma mecanica dos tags estaticos,
+  entao funciona igual na Adsterra) => 3 banners LADO A LADO.
+  IMPORTANTE: as regras de layout da fila ficam no <style> abaixo, embutidas
+  no proprio HTML — assim nunca dependem do cache de ads.css (foi cache antigo
+  de CSS que deixou os banners empilhados em 23/11/2026).
 {% endcomment %}
+<style>
+.ad-top__row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:flex-start;gap:12px}
+.ad-top__item{flex:0 1 auto;min-width:0;width:300px;max-width:300px}
+.ad-top__item .ad__frame{margin:0}
+</style>
 <div class="ad-top__row">
   <div class="ad-top__item">
     <div class="ad__frame" data-w="300" data-h="250">
@@ -43,7 +51,7 @@
   </div>
   <script>
   (function () {
-    if (!window.matchMedia || !window.matchMedia('(min-width: 1000px)').matches) return;
+    if (!window.matchMedia || !window.matchMedia('(min-width: 800px)').matches) return;
     var KEY = '0071d3c332c1cacde96bdf0b0502f2ae';
     var par =
       '<div class="ad-top__item"><div class="ad__frame" data-w="300" data-h="250">' +
