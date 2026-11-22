@@ -81,11 +81,15 @@ Desde 23/11/2026 (3ª rodada) os banners são imagens próprias de afiliado (pro
 - **Motivo do desligamento**: o criativo do banner exibia casas de apostas (bet), proibido pelo dono por ser publicidade de bet no Brasil.
 - **Sem exigência de tráfego** e aprovação rápida (costuma sair em minutos ou horas); paga bem menos que o AdSense por mil visualizações.
 - Os códigos continuam guardados em `_includes/ads/adsterra.html` (banner 300×250 por slot e o 728×90 em comentário no fim). **Para voltar (não recomendado): `ads.provider: "adsterra"` em `_config.yml`** — mas os criativos da rede podem incluir bet de novo.
-- **Teste A/B de redes**: para comparar com outra rede, mude `provider` e `enabled` em `_config.yml`. Para medir, use o GA4 (`analytics.ga4_id`) + o relatório de ganhos da rede.
+- **Teste A/B de redes**: para comparar com outra rede, mude `provider` e `enabled` em `_config.yml`. Para medir, use o Google Analytics (container GTM em `analytics.gtm_id`) + o relatório da rede.
 
-## 3. Indexação (ferramentas já instaladas)
+## 3. Indexação e SEO/AEO/GEO (ferramentas já instaladas)
 
-- `robots.txt` e `sitemap.xml` já são gerados automaticamente (jekyll-sitemap).
+- **Sitemap**: `sitemap.xml` é gerado automaticamente (jekyll-sitemap) e **inclui o blog sozinho** — cada post novo da automação entra no sitemap na próxima compilação (verificado: 13 posts e 7 categorias em 23/11/2026).
+- **robots.txt**: agora é um arquivo próprio na raiz (`robots.txt`), não o do plugin. Libera todos os buscadores (SEO) e declara explicitamente os rastreadores de IA como bem-vindos (AEO/GEO): Google-Extended (AI Overviews/Gemini), GPTBot/OAI-SearchBot/ChatGPT-User (OpenAI), ClaudeBot/Claude-User/Claude-SearchBot (Anthropic), PerplexityBot/Perplexity-User, Applebot/Applebot-Extended, meta-externalagent (Meta AI), Amazonbot, DuckAssistBot e Bytespider. Termina com a linha `Sitemap:` apontando para o sitemap.
+- **llms.txt**: resumo do site em português para motores generativos (ChatGPT, Perplexity, Claude, Gemini) em `llms.txt`, com links das seções, sitemap e feed e pedido de atribuição de fonte.
+- **Meta robots**: todas as páginas enviam `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1` — permite snippets completos e imagens grandes nos resultados e nas respostas de IA (AI Overviews, Discover).
+- **Tag do Google (GTM)**: container **GTM-KJDP9TGB** instalado em 23/11/2026 — configurado em `_config.yml → analytics.gtm_id` e carregado em TODAS as páginas via `_includes/head.html` no formato oficial "Google tag (gtag.js)" (com `gtag('config')`; o snippet colado pelo dono não tinha essa linha e o gtm.js legado foi substituído). O container dispara tudo que estiver configurado nele (GA4, eventos, etc.). Para trocar de tag: mude `analytics.gtm_id` (ou esvazie o GTM e preencha `analytics.ga4_id`).
 - **IndexNow (Bing, Yandex, Seznam)**: o workflow `.github/workflows/indexar.yml` roda todo dia às 09:23 (Brasília), lê o sitemap e envia todas as URLs para `api.indexnow.org`. A chave do site fica em `<chave>.txt` na raiz. Para rodar manualmente: aba **Actions → Indexar → Run workflow**.
 - **Google**: não tem ping automático (foi descontinuado). Faça 1 vez: cadastre o site no [Search Console](https://search.google.com/search-console), cole o código de verificação em `_config.yml → webmaster_verifications.google` e envie o sitemap `sitemap.xml`.
 - Verificação do Bing/Yandex: mesma coisa, em `webmaster_verifications.bing/yandex`.

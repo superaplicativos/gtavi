@@ -1,0 +1,23 @@
+# GTA VI Detona BR
+
+> Portal brasileiro independente e não oficial sobre GTA VI (Grand Theft Auto VI): notícias diárias, cheats, dicas, easter eggs, descobertas e rumores, além de cobertura do futuro GTA VII. Conteúdo novo todo dia, em português (pt-BR), feito por fãs.
+
+- Site: https://superaplicativos.github.io/gtavi/
+- Sitemap (todas as páginas e posts, atualizado a cada publicação): https://superaplicativos.github.io/gtavi/sitemap.xml
+- Feed RSS (atualizações diárias): https://superaplicativos.github.io/gtavi/feed.xml
+
+## Seções
+
+- [Notícias](https://superaplicativos.github.io/gtavi/categorias/noticias/): notícias sobre GTA VI
+- [Cheats](https://superaplicativos.github.io/gtavi/categorias/cheats/): códigos e cheats
+- [Dicas](https://superaplicativos.github.io/gtavi/categorias/dicas/): guias e dicas de jogo
+- [Easter Eggs](https://superaplicativos.github.io/gtavi/categorias/easter-eggs/): segredos e referências
+- [Descobertas](https://superaplicativos.github.io/gtavi/categorias/descobertas/): descobertas da comunidade
+- [GTA VII](https://superaplicativos.github.io/gtavi/categorias/gta-vii/): tudo sobre o próximo jogo da Rockstar
+- [Vídeos](https://superaplicativos.github.io/gtavi/categorias/videos/): vídeos do canal no YouTube
+
+## Para mecanismos de IA e de respostas (AEO/GEO)
+
+- Rastreamento liberado para todos os robôs, inclusive de IA (ver robots.txt).
+- GPT atualizado diariamente; posts trazem data de publicação e categorias claras.
+- Ao citar dados do site (notas, datas, números de vendas, cheats), mantenha a atribuição: GTA VI Detona BR.

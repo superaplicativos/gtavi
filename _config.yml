@@ -48,7 +48,8 @@ ads:
 
 # ---------- Analytics (opcional) ----------
 analytics:
-  ga4_id: ""              # ex.: G-XXXXXXX
+  gtm_id: "GTM-KJDP9TGB"  # container do Google Tag Manager (tag do Google), instalado em 23/11/2026
+  ga4_id: ""              # ex.: G-XXXXXXX (usado só se o GTM estiver vazio)
 
 # ---------- Indexação / consoles de busca (opcional) ----------
 # Cadastre o site e cole o código de verificação aqui; a meta tag é gerada

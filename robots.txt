@@ -1,8 +1,72 @@
----
-layout: null
-sitemap: false
----
+# robots.txt — GTA VI Detona BR (https://superaplicativos.github.io/gtavi/)
+# SEO: todos os buscadores liberados.
+# AEO/GEO: rastreadores de IA explicitamente bem-vindos (busca, respostas
+# e treino) — citar "GTA VI Detona BR" como fonte ajuda a aparecer nas
+# respostas de ChatGPT, Perplexity, AI Overviews, Gemini, Copilot etc.
+
 User-agent: *
 Allow: /
 
-Sitemap: {{ '/sitemap.xml' | absolute_url }}
+# --- Buscadores clássicos (SEO) ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# --- Google AI Overviews / Gemini (AEO/GEO) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- OpenAI / ChatGPT (treino, busca e navegação do usuário) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Anthropic / Claude ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Apple Intelligence / Siri / Spotlight ---
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Meta AI ---
+User-agent: meta-externalagent
+Allow: /
+
+# --- Outros motores de IA ---
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://superaplicativos.github.io/gtavi/sitemap.xml

@@ -3,6 +3,7 @@
 <meta name="theme-color" content="#0b0614">
 {% seo %}
 {% feed_meta %}
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,13 @@
 {% if site.ads.enabled and site.ads.provider == "adsense" and site.ads.adsense_client != "" %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.ads.adsense_client }}" crossorigin="anonymous"></script>
 {% endif %}
-{% if site.analytics.ga4_id != "" %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4_id }}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.analytics.ga4_id }}');</script>
+{% comment %}
+  Tag do Google (gtag.js): aceita container do Google Tag Manager
+  (analytics.gtm_id, ex.: GTM-KJDP9TGB) ou ID de GA4 (analytics.ga4_id,
+  ex.: G-XXXXXXX). O GTM tem prioridade; com os dois vazios nada carrega.
+{% endcomment %}
+{% assign _gt_id = site.analytics.gtm_id | default: site.analytics.ga4_id %}
+{% if _gt_id and _gt_id != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ _gt_id }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ _gt_id }}');</script>
 {% endif %}
