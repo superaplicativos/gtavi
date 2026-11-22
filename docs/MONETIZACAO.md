@@ -45,29 +45,31 @@ Cada slot é o ID de um bloco "Display" criado no painel do AdSense.
 
 ### Como o sistema de anúncios funciona (desde 23/11/2026)
 
-As posições (slots) são fixas nos layouts e não mudam quando você troca de rede:
+As posições (slots) são fixas nos layouts e não mudam quando você troca de rede.
+Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funciona bem no celular:
 
 | Slot | Onde aparece | Formato atual |
 |---|---|---|
-| `top` | Topo de TODAS as páginas (abaixo do menu) | 728×90 Adsterra |
-| `footer` | Rodapé de TODAS as páginas | 728×90 Adsterra |
+| `top` | Topo de TODAS as páginas (abaixo do menu) | 300×250 Adsterra |
+| `footer` | Rodapé de TODAS as páginas | 300×250 Adsterra |
 | `article` | Fim do texto de cada post | 300×250 Adsterra |
 | `sidebar` | Barra lateral de cada post | 300×250 Adsterra |
 | `infeed` | Meio dos cards da home | 300×250 Adsterra |
 
 - Códigos por rede: `_includes/ads/adsterra.html` (um bloco por slot), `_includes/ads/custom.html` (outra rede) e o AdSense usa os IDs de `site.ads.slots`.
-- Social Bar (barra flutuante global): `_includes/ads/socialbar.html`, liga/desliga com `ads.socialbar`.
+- Social Bar (barra flutuante global): **desligada em 23/11/2026 a pedido do dono** (era invasiva). Para voltar: `socialbar: true` em `_config.yml` (o código continua em `_includes/ads/socialbar.html`).
+- Banner horizontal 728×90 original está guardado em comentário no fim de `_includes/ads/adsterra.html` (ficava cortado no celular; para restaurar é só colar o bloco no slot desejado).
 - Trocar de empresa: gere os códigos no painel da rede nova, cole no arquivo correspondente e mude `provider`. Ou apenas `enabled: false` para tirar tudo.
-- Os banners de 728×90 viram responsivos no celular via `assets/js/ads.js` (escala proporcional).
+- Os banners viram responsivos no celular via `assets/js/ads.js` (escala proporcional, funciona mesmo quando a rede injeta o banner depois da página carregada).
 - Posts novos publicados pela automação recebem os banners automaticamente (os slots moram nos layouts, não nos posts).
 
 ## 2. Adsterra: rede em uso desde 23/11/2026
 
 - **Sem exigência de tráfego** e aprovação rápida (costuma sair em minutos ou horas).
 - Pagamento a partir de valores baixos (cerca de US$ 5 em alguns métodos; PayPal/transferência têm mínimos maiores), quinzenal.
-- **Ativa hoje**: banners 728×90 (topo e rodapé), 300×250 (fim do artigo, sidebar e meio da home) e Social Bar. Códigos em `_includes/ads/adsterra.html`; social bar em `_includes/ads/socialbar.html`.
+- **Ativa hoje**: banners 300×250 no topo, rodapé, fim do artigo, sidebar e meio da home. **Social Bar desligada** (invasiva). Códigos em `_includes/ads/adsterra.html`.
 - **Teste A/B de redes**: para comparar com outra rede, mude `provider` e `enabled` em `_config.yml`. Para medir, use o GA4 (`analytics.ga4_id`) + o relatório de ganhos da rede.
-- ⚠️ **Atenção para o futuro AdSense**: Social Bar e formatos mais agressivos podem pesar na aprovação do AdSense depois. Quando for pedir AdSense, desligue a Social Bar (`socialbar: false`) e considere manter só banner.
+- **Boa notícia**: com a Social Bar desligada, o site usa só Banner (formato não intrusivo), o que ajuda numa futura aprovação no AdSense.
 - Paga bem menos que o AdSense por mil visualizações.
 - Para usar outra rede: `ads.provider: "custom"` e cole o código em `_includes/ads/custom.html`.
 

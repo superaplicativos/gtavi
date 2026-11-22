@@ -37,7 +37,7 @@ launch_date: "2026-11-19T00:00:00-03:00"
 ads:
   enabled: true             # false = remove TODOS os banners do site de uma vez
   provider: "adsterra"      # adsterra | adsense | custom
-  socialbar: true           # Social Bar flutuante (Adsterra) em todas as páginas
+  socialbar: false          # Social Bar flutuante (Adsterra) - desligada por ser invasiva; true para voltar
   show_placeholders: false  # true só para ver onde os banners aparecem
   adsense_client: ""        # ex.: ca-pub-1234567890123456 (quando provider = adsense)
   slots:                    # IDs dos blocos criados no painel do AdSense
