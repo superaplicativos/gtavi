@@ -50,7 +50,7 @@ Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funcio
 
 | Slot | Onde aparece | Formato atual |
 |---|---|---|
-| `top` | Topo de TODAS as páginas (abaixo do menu) — **1 banner no celular, 3 lado a lado no PC** | 3× 300×250 Adsterra |
+| `top` | Logo abaixo do cabeçalho grande — hero da home, cabeçalho do post e da categoria (**1 banner no celular, 3 lado a lado no PC**) | 3× 300×250 Adsterra |
 | `footer` | Rodapé de TODAS as páginas | 300×250 Adsterra |
 | `article` | Fim do texto de cada post | 300×250 Adsterra |
 | `sidebar` | Barra lateral de cada post | 300×250 Adsterra |

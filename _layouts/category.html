@@ -13,6 +13,9 @@ body_class: page page--cat
     <span class="cat-hero__count">{{ posts.size }} {% if posts.size == 1 %}matéria{% else %}matérias{% endif %}</span>
   </div>
 </header>
+
+<div class="wrap ad-wrap">{% include ad.html slot="top" %}</div>
+
 <section class="wrap">
   {% if posts.size > 0 %}
   <div class="grid grid--3">
