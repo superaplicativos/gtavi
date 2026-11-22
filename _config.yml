@@ -56,7 +56,7 @@ analytics:
 # automaticamente pelo jekyll-seo-tag em todas as páginas.
 # Google: https://search.google.com/search-console  |  Bing: https://www.bing.com/webmasters
 webmaster_verifications:
-  google: ""
+  google: "Ti_ocqoKkhviHMyl84iGh_a7lhfOhPaRMrYRpkjdWzI"
   bing: ""
   yandex: ""
 
