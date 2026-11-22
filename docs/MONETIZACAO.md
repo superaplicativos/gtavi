@@ -50,7 +50,7 @@ Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funcio
 
 | Slot | Onde aparece | Formato atual |
 |---|---|---|
-| `top` | Topo de TODAS as páginas (abaixo do menu) | 300×250 Adsterra |
+| `top` | Topo de TODAS as páginas (abaixo do menu) — **1 banner no celular, 3 lado a lado no PC** | 3× 300×250 Adsterra |
 | `footer` | Rodapé de TODAS as páginas | 300×250 Adsterra |
 | `article` | Fim do texto de cada post | 300×250 Adsterra |
 | `sidebar` | Barra lateral de cada post | 300×250 Adsterra |
@@ -61,13 +61,14 @@ Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funcio
 - Banner horizontal 728×90 original está guardado em comentário no fim de `_includes/ads/adsterra.html` (ficava cortado no celular; para restaurar é só colar o bloco no slot desejado).
 - Trocar de empresa: gere os códigos no painel da rede nova, cole no arquivo correspondente e mude `provider`. Ou apenas `enabled: false` para tirar tudo.
 - Os banners viram responsivos no celular via `assets/js/ads.js` (escala proporcional, funciona mesmo quando a rede injeta o banner depois da página carregada).
+- **Fila do topo (3 no PC / 1 no celular)**: o primeiro banner é um tag estático; em telas ≥ 1000px um script dentro de `.ad-top__row` escreve mais 2 cópias com `document.write` durante o carregamento — mesma mecânica dos tags estáticos, então a Adsterra processa igual. No celular nada extra é carregado (nenhum anúncio escondido). Para mudar a quantidade/limite, ajuste o script do slot `top` em `_includes/ads/adsterra.html` e o CSS `.ad-top__row` em `assets/css/ads.css`.
 - Posts novos publicados pela automação recebem os banners automaticamente (os slots moram nos layouts, não nos posts).
 
 ## 2. Adsterra: rede em uso desde 23/11/2026
 
 - **Sem exigência de tráfego** e aprovação rápida (costuma sair em minutos ou horas).
 - Pagamento a partir de valores baixos (cerca de US$ 5 em alguns métodos; PayPal/transferência têm mínimos maiores), quinzenal.
-- **Ativa hoje**: banners 300×250 no topo, rodapé, fim do artigo, sidebar e meio da home. **Social Bar desligada** (invasiva). Códigos em `_includes/ads/adsterra.html`.
+- **Ativa hoje**: banners 300×250 no topo (**3 lado a lado no PC, 1 no celular**), rodapé, fim do artigo, sidebar e meio da home. **Social Bar desligada** (invasiva). Códigos em `_includes/ads/adsterra.html`.
 - **Teste A/B de redes**: para comparar com outra rede, mude `provider` e `enabled` em `_config.yml`. Para medir, use o GA4 (`analytics.ga4_id`) + o relatório de ganhos da rede.
 - **Boa notícia**: com a Social Bar desligada, o site usa só Banner (formato não intrusivo), o que ajuda numa futura aprovação no AdSense.
 - Paga bem menos que o AdSense por mil visualizações.
