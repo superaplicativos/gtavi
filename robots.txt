@@ -17,6 +17,10 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
+# --- Google Notícias (robô dedicado do Google News) ---
+User-agent: Googlebot-News
+Allow: /
+
 # --- Google AI Overviews / Gemini (AEO/GEO) ---
 User-agent: Google-Extended
 Allow: /
@@ -70,3 +74,4 @@ User-agent: Bytespider
 Allow: /
 
 Sitemap: https://superaplicativos.github.io/gtavi/sitemap.xml
+Sitemap: https://superaplicativos.github.io/gtavi/news-sitemap.xml

@@ -1,0 +1,34 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+{%- comment -%}
+  Sitemap de notícias para o Google Notícias (formato news-sitemap do Google).
+  O Google só aceita artigos publicados nas ÚLTIMAS 48 HORAS neste arquivo
+  (as urls mais antigas são simplesmente ignoradas por ele — não é erro).
+  Escolhemos automaticamente os posts de site.posts com date >= agora-48h.
+  Documentação: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
+{%- endcomment -%}
+{%- assign cutoff = site.time | date: '%s' | minus: 172800 -%}
+{%- for post in site.posts limit: 1000 -%}
+{%- assign post_ts = post.date | date: '%s' | plus: 0 -%}
+{%- if post_ts >= cutoff -%}
+  <url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>{{ site.title | escape }}</news:name>
+        <news:language>pt</news:language>
+      </news:publication>
+      <news:publication_date>{{ post.date | date_to_xmlschema }}</news:publication_date>
+      <news:title>{{ post.title | strip_html | escape }}</news:title>
+      {%- if post.tags.size > 0 -%}
+      <news:keywords>{{ post.tags | join: ', ' | escape }}</news:keywords>
+      {%- endif -%}
+    </news:news>
+  </url>
+{%- endif -%}
+{%- endfor -%}
+</urlset>
