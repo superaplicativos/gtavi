@@ -1,7 +1,9 @@
 # Faixa de "Urgente" que rola no topo do site. 4 a 8 itens curtos (até ~90 caracteres).
 # Atualize todo dia junto com o post novo. `url` é opcional (caminho relativo, sem baseurl).
-updated: "2026-11-21"
+updated: "2026-11-22"
 items:
+  - text: "Glitch no Xbox Series X destrava FPS de GTA VI, mas acelera o jogo"
+    url: /2026/11/22/gta-vi-xbox-glitch-quick-resume-60-fps/
   - text: "Guia: como ganhar dinheiro rápido no começo de GTA VI"
     url: /2026/11/21/como-ganhar-dinheiro-rapido-gta-vi/
   - text: "GTA VI estreia com nota 99 no Metacritic e empata recorde histórico"
