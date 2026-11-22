@@ -46,35 +46,44 @@ Cada slot é o ID de um bloco "Display" criado no painel do AdSense.
 ### Como o sistema de anúncios funciona (desde 23/11/2026)
 
 As posições (slots) são fixas nos layouts e não mudam quando você troca de rede.
-Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funciona bem no celular:
+Desde 23/11/2026 (3ª rodada) os banners são imagens próprias de afiliado (proporção ~300×250, funciona bem no celular):
 
 | Slot | Onde aparece | Formato atual |
 |---|---|---|
-| `top` | Logo abaixo do cabeçalho grande — hero da home, cabeçalho do post e da categoria (**1 banner no celular, 3 lado a lado no PC**) | 3× 300×250 Adsterra |
-| `footer` | Rodapé de TODAS as páginas — **3 lado a lado no PC, 1 no celular** | 3× 300×250 Adsterra (fila) |
-| `article` | Fim do texto de cada post | 300×250 Adsterra |
-| `sidebar` | Barra lateral de cada post | 300×250 Adsterra |
-| `infeed` | Meio dos cards da home — **3 lado a lado no PC, 1 no celular** | 3× 300×250 Adsterra (fila) |
+| `top` | Logo abaixo do cabeçalho grande — hero da home, cabeçalho do post e da categoria (**1 banner no celular, 3 lado a lado no PC**) | 3× banner imagem Mercado Livre (fila) |
+| `footer` | Rodapé de TODAS as páginas — **3 lado a lado no PC, 1 no celular** | 3× banner imagem Mercado Livre (fila) |
+| `article` | Fim do texto de cada post | 1 banner imagem Mercado Livre (aleatório entre os 3) |
+| `sidebar` | Barra lateral de cada post | 1 banner imagem Mercado Livre (aleatório entre os 3) |
+| `infeed` | Meio dos cards da home — **3 lado a lado no PC, 1 no celular** | 3× banner imagem Mercado Livre (fila) |
 
-- Códigos por rede: `_includes/ads/adsterra.html` (um bloco por slot), `_includes/ads/custom.html` (outra rede) e o AdSense usa os IDs de `site.ads.slots`.
+- Códigos por rede: `_includes/ads/custom.html` (banners Mercado Livre, **em uso**), `_includes/ads/adsterra.html` (Adsterra, desligada) e o AdSense usa os IDs de `site.ads.slots`.
 - Social Bar (barra flutuante global): **desligada em 23/11/2026 a pedido do dono** (era invasiva). Para voltar: `socialbar: true` em `_config.yml` (o código continua em `_includes/ads/socialbar.html`).
 - Banner horizontal 728×90 original está guardado em comentário no fim de `_includes/ads/adsterra.html` (ficava cortado no celular; para restaurar é só colar o bloco no slot desejado).
 - Trocar de empresa: gere os códigos no painel da rede nova, cole no arquivo correspondente e mude `provider`. Ou apenas `enabled: false` para tirar tudo.
-- Os banners viram responsivos no celular via `assets/js/ads.js` (escala proporcional, funciona mesmo quando a rede injeta o banner depois da página carregada).
-- **Filas (topo, meio da home e rodapé — 3 no PC / 1 no celular)**: cada fila tem 1 tag estático; em telas ≥ 800px um script dentro de cada `.ad-row` escreve mais 2 cópias com `document.write` durante o carregamento — mesma mecânica dos tags estáticos, então a Adsterra processa igual. Em janela estreita os 3 encolhem juntos (flex nowrap — **nunca empilham**). No celular nada extra é carregado (nenhum anúncio escondido). O HTML das filas é montado uma única vez no include (`{% capture ad_row %}`) e reaproveitado nos 3 slots. As regras de layout das filas estão embutidas num `<style>` no `_layouts/default.html` (não dependem do cache de `ads.css` — cache antigo de CSS empilhou os banners em 23/11/2026). Para mudar a quantidade/limite, ajuste o script `ad_row_script` em `_includes/ads/adsterra.html`.
+- Os banners de imagem são responsivos por natureza (`width:100%; height:auto`), sem depender de `assets/js/ads.js` (esse script só escala iframes, útil se voltar uma rede que injeta iframe).
+- **Filas (topo, meio da home e rodapé — 3 no PC / 1 no celular)**: com banners de imagem os 3 itens já vão no HTML e o CSS esconde os extras no celular (regras embutidas no include, imunes a cache; espelhadas em `assets/css/ads.css`). Em janela estreita os 3 encolhem juntos (flex nowrap — **nunca empilham**). No celular o JS do include sorteia 1 dos 3 banners a cada pageview; sem JavaScript fica o 1º.
 - Posts novos publicados pela automação recebem os banners automaticamente (os slots moram nos layouts, não nos posts).
 
-## 2. Adsterra: rede em uso desde 23/11/2026
+## 2. Banners Mercado Livre (afiliados): em uso desde 23/11/2026
 
-- **Sem exigência de tráfego** e aprovação rápida (costuma sair em minutos ou horas).
-- Pagamento a partir de valores baixos (cerca de US$ 5 em alguns métodos; PayPal/transferência têm mínimos maiores), quinzenal.
-- **Ativa hoje**: banners 300×250 no topo (**3 lado a lado no PC, 1 no celular**), rodapé, fim do artigo, sidebar e meio da home. **Social Bar desligada** (invasiva). Códigos em `_includes/ads/adsterra.html`.
+- **Por quê trocou**: a Adsterra exibia anúncios de **bet (apostas)**, publicidade proibida/restrita no Brasil — a pedido do dono, a rede foi desligada no mesmo dia em que entrou.
+- **O que é**: 3 banners oficiais do Mercado Livre com links de afiliado curtos (`meli.la`), comissionado por compra atribuída ao link. Comissão rastreada na conta de afiliado do Mercado Livre (nada para configurar no site).
+- **Banners** (imagens em `assets/banners/`, 600px de largura, ~55-70 KB cada):
+  1. `ps5-vr.jpg` → `https://meli.la/1YkssQF` — PlayStation VR2 Bundle Horizon
+  2. `ps5.jpg` → `https://meli.la/29Y8p6s` — PlayStation 5 Bundle Astro Bot + GT7
+  3. `disco.jpg` → `https://meli.la/1YXALkX` — Leitor de disco para PS5 Digital Edition (Slim)
+- **Para trocar link ou imagem**: edite o bloco `meli_items` em `_includes/ads/custom.html` (href = link de afiliado, src = imagem). Novo banner: salve o arquivo em `assets/banners/` (ideal 600px de largura).
+- **Sorteio**: nos slots únicos (article, sidebar) e no celular (filas) o banner mostrado é sorteado a cada pageview entre os 3 — distribui cliques entre os produtos. Sem JavaScript fica o 1º.
+- **Boa notícia**: banner próprio não depende de rede de terceiros, não tem bet e não atrapalha uma futura aprovação no AdSense.
+
+## 2.1 Adsterra: usada em 23/11/2026, desligada no mesmo dia
+
+- **Motivo do desligamento**: o criativo do banner exibia casas de apostas (bet), proibido pelo dono por ser publicidade de bet no Brasil.
+- **Sem exigência de tráfego** e aprovação rápida (costuma sair em minutos ou horas); paga bem menos que o AdSense por mil visualizações.
+- Os códigos continuam guardados em `_includes/ads/adsterra.html` (banner 300×250 por slot e o 728×90 em comentário no fim). **Para voltar (não recomendado): `ads.provider: "adsterra"` em `_config.yml`** — mas os criativos da rede podem incluir bet de novo.
 - **Teste A/B de redes**: para comparar com outra rede, mude `provider` e `enabled` em `_config.yml`. Para medir, use o GA4 (`analytics.ga4_id`) + o relatório de ganhos da rede.
-- **Boa notícia**: com a Social Bar desligada, o site usa só Banner (formato não intrusivo), o que ajuda numa futura aprovação no AdSense.
-- Paga bem menos que o AdSense por mil visualizações.
-- Para usar outra rede: `ads.provider: "custom"` e cole o código em `_includes/ads/custom.html`.
 
-## 2.1 Indexação (ferramentas já instaladas)
+## 3. Indexação (ferramentas já instaladas)
 
 - `robots.txt` e `sitemap.xml` já são gerados automaticamente (jekyll-sitemap).
 - **IndexNow (Bing, Yandex, Seznam)**: o workflow `.github/workflows/indexar.yml` roda todo dia às 09:23 (Brasília), lê o sitemap e envia todas as URLs para `api.indexnow.org`. A chave do site fica em `<chave>.txt` na raiz. Para rodar manualmente: aba **Actions → Indexar → Run workflow**.
@@ -82,7 +91,7 @@ Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funcio
 - Verificação do Bing/Yandex: mesma coisa, em `webmaster_verifications.bing/yandex`.
 - A IA de posts não precisa fazer nada para a indexação: tudo roda sozinho no GitHub.
 
-## 3. Outras redes (para depois)
+## 4. Outras redes (para depois)
 
 | Rede | Observação |
 |---|---|
@@ -92,11 +101,11 @@ Desde 23/11/2026 (2ª rodada) TODOS os banners são 300×250, formato que funcio
 | **Infolinks** | Anúncios dentro do texto, mais intrusivo. Evitar. |
 | **Monetag / PropellerAds** | Focados em pop-under e push. Evitar. |
 
-## 4. Renda extra não intrusiva
+## 5. Renda extra não intrusiva
 
 - **Programa de Associados da Amazon Brasil:** links para consoles, controles, headsets e edições físicas de GTA VI dentro de guias ("melhor headset para jogar GTA VI"). Sem banner piscando, só link.
 - **YouTube:** cada post pode embutir um vídeo do canal (`youtube:` no front matter), o site passa a gerar views para o canal, que já é monetizado à parte.
 
-## 5. Sobre o GitHub Pages
+## 6. Sobre o GitHub Pages
 
 Os termos do GitHub Pages dizem que ele não deve ser usado como hospedagem principal de um **negócio online / e-commerce**. Um blog de fãs com alguns banners é um uso comum e, na prática, tolerado, mas, se o site crescer muito, migre o mesmo repositório para **Cloudflare Pages** ou **Netlify** (grátis, também compilam Jekyll) sem mudar nada no conteúdo.

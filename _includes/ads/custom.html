@@ -1,11 +1,102 @@
 {% comment %}
-  Área para código de OUTRA rede (Media.net, Rubicon, etc.).
-  Como usar: em _config.yml troque ads.provider para "custom" e cole aqui
-  o código do banner. A variável include.slot diz qual posição está sendo
-  renderizada (top, infeed, article, sidebar, footer) - use um if por slot
-  se quiser banners diferentes em cada posição.
-  As redes já cadastradas ficam em arquivos próprios na mesma pasta:
-  - ads/adsterra.html   (banners Adsterra por slot)
-  - ads/socialbar.html  (Social Bar Adsterra, global)
-  Formatos suportados aqui: banner/display. Popunder e Direct Link não.
+  ============================================================
+  BANNERS PROPRIOS — AFILIADOS MERCADO LIVRE (provider: "custom")
+  ------------------------------------------------------------
+  Em uso desde 23/11/2026. A Adsterra foi desligada no mesmo dia
+  porque o criativo dela exibia anuncios de bet (apostas), cuja
+  publicidade e proibida/restrita no Brasil.
+
+  3 banners oficiais do Mercado Livre (imagens em assets/banners/):
+  1. ps5-vr.jpg -> https://meli.la/1YkssQF  (PlayStation VR2 Bundle Horizon)
+  2. ps5.jpg    -> https://meli.la/29Y8p6s  (PlayStation 5 Bundle Astro Bot + GT7)
+  3. disco.jpg  -> https://meli.la/1YXALkX  (Leitor de disco p/ PS5 Digital Slim)
+
+  PARA TROCAR UM BANNER: edite abaixo o href (link de afiliado) ou
+  o src (imagem) dentro do bloco "meli_items". Imagem nova: coloque
+  o arquivo em assets/banners/ (600px de largura e ~85% de qualidade
+  e ideal; os 3 atuais tem 600x499 ou 600x483).
+
+  LAYOUT (mesmas posicoes que a Adsterra usava):
+  - top, footer e infeed: FILA de 3 LADO A LADO no PC (>=800px) que
+    encolhe junto em janela estreita e NUNCA empilha (flex nowrap;
+    regras .ad-row embutidas no <head> via _layouts/default.html).
+    No celular aparece 1 banner, escolhido ALEATORIAMENTE por
+    pageview (sem JavaScript fica o 1o).
+  - article e sidebar: 1 banner por vez, aleatorio entre os 3.
+  - Como sao imagens simples (<a><img>), NAO usa document.write:
+    os 3 itens ja vao no HTML e o CSS esconde os extras no celular.
+    Nenhuma dependencia de assets/js/ads.js (ele so escala iframes).
+  ============================================================
 {% endcomment %}
+
+{% capture meli_items %}
+<a class="ad-row__item ad-meli__item" href="https://meli.la/1YkssQF" target="_blank" rel="sponsored noopener" aria-label="PlayStation VR2 Bundle Horizon no Mercado Livre"><img src="{{ '/assets/banners/ps5-vr.jpg' | relative_url }}" alt="PlayStation VR2 Bundle Horizon — menor preço do Brasil no Mercado Livre" width="600" height="499" __LAZY__></a>
+<a class="ad-row__item ad-meli__item" href="https://meli.la/29Y8p6s" target="_blank" rel="sponsored noopener" aria-label="PlayStation 5 Bundle Astro Bot e Gran Turismo 7 no Mercado Livre"><img src="{{ '/assets/banners/ps5.jpg' | relative_url }}" alt="PlayStation 5 Bundle Astro Bot e Gran Turismo 7 — menor preço do Brasil no Mercado Livre" width="600" height="483" __LAZY__></a>
+<a class="ad-row__item ad-meli__item" href="https://meli.la/1YXALkX" target="_blank" rel="sponsored noopener" aria-label="Leitor de disco para PS5 Digital Edition Slim no Mercado Livre"><img src="{{ '/assets/banners/disco.jpg' | relative_url }}" alt="Leitor de disco para PS5 Digital Edition Slim — menor preço do Brasil no Mercado Livre" width="600" height="499" __LAZY__></a>
+{% endcapture %}
+{% assign meli_items_top = meli_items | replace: '__LAZY__', '' %}
+{% assign meli_items_rest = meli_items | replace: '__LAZY__', 'loading="lazy" ' %}
+
+<style>
+/* Banners Mercado Livre (afiliados) — regras embutidas no HTML de
+   proposito para nao depender do cache de assets/css/ads.css. */
+.ad-meli__item{display:block;max-width:100%}
+.ad-meli__item img{display:block;width:100%;height:auto;border:0;border-radius:10px}
+/* Slots unicos (article, sidebar): so 1 banner visivel; o JS abaixo
+   sorteia qual; sem JavaScript fica o 1o. */
+.ad-meli-single .ad-meli__item{display:none;width:300px;margin:0 auto}
+.ad-meli-single .ad-meli__item:first-child{display:block}
+/* Filas .ad-row (top, footer, infeed) no celular: so 1 banner visivel. */
+@media (max-width:799px){
+  .ad-row .ad-meli__item{display:none;width:300px;margin:0 auto}
+  .ad-row .ad-meli__item:first-child{display:block}
+}
+</style>
+
+{% if include.slot == "article" or include.slot == "sidebar" %}
+<div class="ad-meli-single">
+{{ meli_items_rest }}
+</div>
+<script>
+(function () {
+  var box = document.currentScript && document.currentScript.previousElementSibling;
+  if (!box) return;
+  var items = box.querySelectorAll('.ad-meli__item');
+  if (items.length < 2) return;
+  var keep = Math.floor(Math.random() * items.length);
+  for (var i = 0; i < items.length; i++) {
+    items[i].style.display = (i === keep) ? 'block' : 'none';
+  }
+})();
+</script>
+{% else %}
+<div class="ad-row">
+{% if include.slot == "top" %}{{ meli_items_top }}{% else %}{{ meli_items_rest }}{% endif %}
+</div>
+<script>
+(function () {
+  var row = document.currentScript && document.currentScript.previousElementSibling;
+  if (!row) return;
+  var items = row.querySelectorAll('.ad-meli__item');
+  if (items.length < 2) return;
+  var mq = window.matchMedia ? window.matchMedia('(min-width: 800px)') : null;
+  function pick() {
+    var keep = Math.floor(Math.random() * items.length);
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.display = (i === keep) ? 'block' : 'none';
+    }
+  }
+  function sync() {
+    if (mq && mq.matches) {
+      /* PC: limpa estilos inline, o CSS mostra os 3 lado a lado */
+      for (var i = 0; i < items.length; i++) items[i].style.display = '';
+    } else {
+      pick();
+    }
+  }
+  sync();
+  /* girou o aparelho / redimensionou janela? re-aplica */
+  if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+})();
+</script>
+{% endif %}

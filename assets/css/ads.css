@@ -11,3 +11,18 @@
 .ad-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:flex-start;gap:12px}
 .ad-row__item{flex:0 1 auto;min-width:0;width:300px;max-width:300px}
 .ad-row__item .ad__frame{margin:0}
+
+/* Banners Mercado Livre (afiliados) — provider "custom" desde 23/11/2026
+   (_includes/ads/custom.html). Sao imagens <a><img>, nao iframes: nada de
+   ads.js/document.write. As MESMAS regras abaixo tambem estao embutidas no
+   include (imune a cache). Filas .ad-row: 3 lado a lado no PC (>=800px),
+   nunca empilham; no celular sobra 1 banner (sorteado por JS, sem JS fica
+   o 1o). Slots unicos (article, sidebar): 1 banner aleatorio entre os 3. */
+.ad-meli__item{display:block;max-width:100%}
+.ad-meli__item img{display:block;width:100%;height:auto;border:0;border-radius:10px}
+.ad-meli-single .ad-meli__item{display:none;width:300px;margin:0 auto}
+.ad-meli-single .ad-meli__item:first-child{display:block}
+@media (max-width:799px){
+  .ad-row .ad-meli__item{display:none;width:300px;margin:0 auto}
+  .ad-row .ad-meli__item:first-child{display:block}
+}
