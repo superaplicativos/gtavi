@@ -61,19 +61,20 @@ Desde 23/11/2026 (3ª rodada) os banners são imagens próprias de afiliado (pro
 - Banner horizontal 728×90 original está guardado em comentário no fim de `_includes/ads/adsterra.html` (ficava cortado no celular; para restaurar é só colar o bloco no slot desejado).
 - Trocar de empresa: gere os códigos no painel da rede nova, cole no arquivo correspondente e mude `provider`. Ou apenas `enabled: false` para tirar tudo.
 - Os banners de imagem são responsivos por natureza (`width:100%; height:auto`), sem depender de `assets/js/ads.js` (esse script só escala iframes, útil se voltar uma rede que injeta iframe).
-- **Filas (topo, meio da home e rodapé — 3 no PC / 1 no celular)**: com banners de imagem os 3 itens já vão no HTML e o CSS esconde os extras no celular (regras embutidas no include, imunes a cache; espelhadas em `assets/css/ads.css`). Em janela estreita os 3 encolhem juntos (flex nowrap — **nunca empilham**). No celular o JS do include sorteia 1 dos 3 banners a cada pageview; sem JavaScript fica o 1º.
+- **Filas (topo, meio da home e rodapé — 4 no PC / 1 no celular)**: com banners de imagem os 4 itens já vão no HTML e o CSS esconde os extras no celular (regras embutidas no include, imunes a cache; espelhadas em `assets/css/ads.css`). Em janela estreita os 4 encolhem juntos (flex nowrap — **nunca empilham**). No celular o JS do include sorteia 1 dos 4 banners a cada pageview; sem JavaScript fica o 1º.
 - Posts novos publicados pela automação recebem os banners automaticamente (os slots moram nos layouts, não nos posts).
 
 ## 2. Banners Mercado Livre (afiliados): em uso desde 23/11/2026
 
 - **Por quê trocou**: a Adsterra exibia anúncios de **bet (apostas)**, publicidade proibida/restrita no Brasil — a pedido do dono, a rede foi desligada no mesmo dia em que entrou.
-- **O que é**: 3 banners oficiais do Mercado Livre com links de afiliado curtos (`meli.la`), comissionado por compra atribuída ao link. Comissão rastreada na conta de afiliado do Mercado Livre (nada para configurar no site).
-- **Banners** (imagens em `assets/banners/`, 600px de largura, ~55-70 KB cada):
+- **O que é**: 4 banners oficiais do Mercado Livre com links de afiliado curtos (`meli.la`), comissionado por compra atribuída ao link. Comissão rastreada na conta de afiliado do Mercado Livre (nada para configurar no site).
+- **Banners** (imagens em `assets/banners/`, 600px de largura, ~55-76 KB cada):
   1. `ps5-vr.jpg` → `https://meli.la/1YkssQF` — PlayStation VR2 Bundle Horizon
   2. `ps5.jpg` → `https://meli.la/29Y8p6s` — PlayStation 5 Bundle Astro Bot + GT7
   3. `disco.jpg` → `https://meli.la/1YXALkX` — Leitor de disco para PS5 Digital Edition (Slim)
+  4. `xbox.jpg` → `https://meli.la/1wHPDJ2` — Xbox One S 1TB + 6 jogos (incluso em 23/11/2026)
 - **Para trocar link ou imagem**: edite o bloco `meli_items` em `_includes/ads/custom.html` (href = link de afiliado, src = imagem). Novo banner: salve o arquivo em `assets/banners/` (ideal 600px de largura).
-- **Sorteio**: nos slots únicos (article, sidebar) e no celular (filas) o banner mostrado é sorteado a cada pageview entre os 3 — distribui cliques entre os produtos. Sem JavaScript fica o 1º.
+- **Sorteio**: nos slots únicos (article, sidebar) e no celular (filas) o banner mostrado é sorteado a cada pageview entre os 4 — distribui cliques entre os produtos. Sem JavaScript fica o 1º.
 - **Boa notícia**: banner próprio não depende de rede de terceiros, não tem bet e não atrapalha uma futura aprovação no AdSense.
 
 ## 2.1 Adsterra: usada em 23/11/2026, desligada no mesmo dia
