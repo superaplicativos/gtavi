@@ -2,6 +2,9 @@
 title: "Take-Two confirma: GTA VI faturou US$ 3,79 bilhões no primeiro dia"
 date: 2026-11-23 07:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/take-two-confirma-3-79-bilhoes-gta-vi-primeiro-dia.jpg"
+cover_credit: "Imagem: PC Gamer"
+cover_credit_url: "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-earned-usd3-79-billion-on-launch-day/"
 featured: true
 especulacao: false
 cover_text: "3,79 bi"
@@ -14,8 +17,14 @@ galeria:
   - pagina: "https://variety.com/2026/gaming/news/gta-6-sales-billions-first-day-1236954198/"
     fonte: "Variety"
     legenda: "A cobertura da Variety sobre o recorde de vendas do primeiro dia"
+    src: "/assets/img/posts/take-two-confirma-3-79-bilhoes-gta-vi-primeiro-dia-1.jpg"
+    credito: "Imagem: Variety"
+    credito_url: "https://variety.com/2026/gaming/news/gta-6-sales-billions-first-day-1236954198/"
   - busca: "Miami Beach Ocean Drive night"
     legenda: "Miami, a inspiração real para Vice City"
+    src: "/assets/img/posts/take-two-confirma-3-79-bilhoes-gta-vi-primeiro-dia-2.jpg"
+    credito: "Foto: Photograph: Radomianin / Public domain via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg"
 description: "A Take-Two diz que GTA VI vendeu US$ 3,79 bilhões em um dia, bem acima das estimativas de fora. Entenda o que o número mede e o que muda em relação ao que se achava."
 tags: [vendas, take-two, recorde, lancamento, gta-vi]
 fontes:
