@@ -1,7 +1,9 @@
 # Faixa de "Urgente" que rola no topo do site. 4 a 8 itens curtos (até ~90 caracteres).
 # Atualize todo dia junto com o post novo. `url` é opcional (caminho relativo, sem baseurl).
-updated: "2026-11-22"
+updated: "2026-11-23"
 items:
+  - text: "Take-Two confirma US$ 3,79 bilhões em vendas de GTA VI no primeiro dia"
+    url: /2026/11/23/take-two-confirma-3-79-bilhoes-gta-vi-primeiro-dia/
   - text: "Glitch no Xbox Series X destrava FPS de GTA VI, mas acelera o jogo"
     url: /2026/11/22/gta-vi-xbox-glitch-quick-resume-60-fps/
   - text: "Guia: como ganhar dinheiro rápido no começo de GTA VI"
@@ -16,5 +18,3 @@ items:
     url: /2026/11/20/easter-eggs-gta-vi-primeira-semana/
   - text: "GTA VI disputa Jogo do Ano no The Game Awards em 10/12"
     url: /2026/11/20/gta-vi-indicado-game-awards-2026/
-  - text: "PC ainda sem data oficial"
-    url: /2026/11/20/gta-vi-pc-o-que-se-sabe/

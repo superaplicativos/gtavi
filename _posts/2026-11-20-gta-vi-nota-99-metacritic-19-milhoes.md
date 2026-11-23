@@ -9,7 +9,8 @@ imagem_pagina: "https://www.forbes.com/sites/paultassi/2026/11/18/the-gta-6-meta
 imagem_fonte: "Forbes"
 cover_fonte: ia
 cover_prompt: "a glowing golden trophy on a neon-lit Miami rooftop at sunset, skyline and palm trees behind, confetti in the warm air"
-featured: true
+featured: false
+last_modified_at: 2026-11-23 07:30:00 -0300
 cover_text: "99"
 description: "A Rockstar empatou o recorde histórico da crítica e, segundo estimativa da Sensor Tower, faturou perto de US$ 1,84 bilhão só no dia de lançamento."
 tags: [metacritic, vendas, lancamento, recorde]
@@ -55,3 +56,5 @@ Os próximos marcos para ficar de olho:
 - **Versão de PC**, que segue sem data anunciada.
 
 Vamos acompanhando tudo por aqui, todos os dias. E no [nosso canal do YouTube]({{ site.social.youtube }}) a gente reage aos números ao vivo.
+
+**Atualização (23/11):** a Take-Two divulgou o número oficial: US$ 3,79 bilhões em vendas no varejo no primeiro dia, bem acima das estimativas citadas acima. Veja [os detalhes]({{ '/2026/11/23/take-two-confirma-3-79-bilhoes-gta-vi-primeiro-dia/' | relative_url }}).
