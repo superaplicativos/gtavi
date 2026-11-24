@@ -2,6 +2,9 @@
 title: "Primeiro patch de GTA VI chegou: 7 correções, sem novidades e glitches ainda vivos"
 date: 2026-11-24 07:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-vi-primeiro-patch-01-002-002-o-que-corrige.jpg"
+cover_credit: "Imagem: Techloy"
+cover_credit_url: "https://www.techloy.com/gta-6-update-01-002-002-patch-notes/"
 featured: true
 especulacao: false
 cover_text: "Patch"
@@ -14,8 +17,14 @@ galeria:
   - pagina: "https://www.vice.com/en/article/gta-6-update-01-002-002-patch-notes/"
     fonte: "Vice"
     legenda: "A cobertura da Vice sobre o primeiro patch de GTA VI"
+    src: "/assets/img/posts/gta-vi-primeiro-patch-01-002-002-o-que-corrige-1.jpg"
+    credito: "Imagem: Vice"
+    credito_url: "https://www.vice.com/en/article/gta-6-update-01-002-002-patch-notes/"
   - busca: "Miami Beach Ocean Drive"
     legenda: "Miami Beach, uma das inspirações reais para o cenário de GTA VI"
+    src: "/assets/img/posts/gta-vi-primeiro-patch-01-002-002-o-que-corrige-2.jpg"
+    credito: "Foto: Photograph: Radomianin / Public domain via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg"
 description: "A Rockstar liberou o primeiro patch de GTA VI, a versão 01.002.002. São 7 correções de bugs, sem conteúdo novo. Veja o que mudou e o que ainda não foi resolvido."
 tags: [patch, atualizacao, bugs, ps5, xbox, gta-vi]
 fontes:
