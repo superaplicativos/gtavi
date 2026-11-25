@@ -2,6 +2,9 @@
 title: "Take-Two derruba projeto que tentava levar GTA VI para o PC por conta própria"
 date: 2026-11-25 07:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/take-two-derruba-port-nao-oficial-gta-vi-pc.jpg"
+cover_credit: "Imagem: VGC"
+cover_credit_url: "https://www.videogameschronicle.com/news/unofficial-gta-6-pc-ports-are-already-getting-shut-down/"
 featured: true
 especulacao: false
 cover_text: "PC"
@@ -14,8 +17,14 @@ galeria:
   - pagina: "https://www.heise.de/en/news/GTA-6-Take-Two-gets-unofficial-PC-port-removed-from-GitHub-11537104.html"
     fonte: "heise"
     legenda: "A cobertura do heise sobre a remoção do projeto no GitHub"
+    src: "/assets/img/posts/take-two-derruba-port-nao-oficial-gta-vi-pc-1.jpg"
+    credito: "Imagem: heise"
+    credito_url: "https://www.heise.de/en/news/GTA-6-Take-Two-gets-unofficial-PC-port-removed-from-GitHub-11537104.html"
   - busca: "Miami Beach Ocean Drive"
     legenda: "Miami Beach, inspiração real para o cenário de GTA VI"
+    src: "/assets/img/posts/take-two-derruba-port-nao-oficial-gta-vi-pc-2.jpg"
+    credito: "Foto: Photograph: Radomianin / Public domain via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg"
 description: "Um projeto de fãs tentava rodar GTA VI no PC sem apoio oficial. A Take-Two pediu a remoção no GitHub e o projeto Leonida acabou. Veja o que aconteceu e o que muda para quem espera o PC."
 tags: [pc, take-two, github, leonida, dmca, gta-vi]
 fontes:
