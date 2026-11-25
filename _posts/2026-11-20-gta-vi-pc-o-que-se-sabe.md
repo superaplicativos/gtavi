@@ -16,6 +16,7 @@ fontes:
     url: "https://www.sec.gov/Archives/edgar/data/0000946581/000162828026072175/ttwo2q27earningsrelease.htm"
   - nome: "GTAVice.net: resumo da teleconferência da Take-Two"
     url: "https://www.gtavice.net/news/gta-6-development-complete-future-plans-pc-release-and-more-take-two-earnings-call-roundup"
+last_modified_at: 2026-11-25 07:00:00 -0300
 ---
 
 É a pergunta que mais aparece nos comentários do canal: **"e no PC, quando sai?"**. A resposta curta: **não há data, nem anúncio oficial**.
@@ -40,3 +41,5 @@ Seguindo esse histórico, uma versão de PC **entre o fim de 2027 e 2028** seria
 Enquanto não houver anúncio, **qualquer "download de GTA VI para PC" é golpe**, normalmente com vírus ou roubo de conta. Não baixe, não compartilhe.
 
 Assim que a Rockstar falar qualquer coisa sobre PC, a notícia sai aqui primeiro.
+
+**Atualização (25/11):** a Take-Two derrubou no GitHub o projeto de fãs Leonida, que tentava rodar GTA VI no PC. Veja [os detalhes]({{ '/2026/11/25/take-two-derruba-port-nao-oficial-gta-vi-pc/' | relative_url }}). Ainda não há versão oficial.

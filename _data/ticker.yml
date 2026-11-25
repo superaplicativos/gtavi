@@ -1,7 +1,9 @@
 # Faixa de "Urgente" que rola no topo do site. 4 a 8 itens curtos (até ~90 caracteres).
 # Atualize todo dia junto com o post novo. `url` é opcional (caminho relativo, sem baseurl).
-updated: "2026-11-24"
+updated: "2026-11-25"
 items:
+  - text: "Take-Two derruba projeto de fãs que tentava levar GTA VI para o PC"
+    url: /2026/11/25/take-two-derruba-port-nao-oficial-gta-vi-pc/
   - text: "Primeiro patch de GTA VI traz 7 correções e nenhum conteúdo novo"
     url: /2026/11/24/gta-vi-primeiro-patch-01-002-002-o-que-corrige/
   - text: "Take-Two confirma US$ 3,79 bilhões em vendas de GTA VI no primeiro dia"
@@ -16,5 +18,3 @@ items:
     url: /2026/11/20/gta-vi-nota-99-metacritic-19-milhoes/
   - text: "61 cheats reportados, veja como desbloquear"
     url: /2026/11/20/todos-os-cheats-gta-vi-como-desbloquear/
-  - text: "Ovos de Páscoa de verdade no topo da torre de rádio"
-    url: /2026/11/20/easter-eggs-gta-vi-primeira-semana/
