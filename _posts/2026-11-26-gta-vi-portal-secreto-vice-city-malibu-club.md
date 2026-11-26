@@ -2,6 +2,9 @@
 title: "Portal secreto leva você ao Vice City original em GTA VI: o que se sabe"
 date: 2026-11-26 07:00:00 -0300
 categoria: easter-eggs
+cover: "/assets/img/posts/gta-vi-portal-secreto-vice-city-malibu-club.jpg"
+cover_credit: "Imagem: Yahoo Tech"
+cover_credit_url: "https://tech.yahoo.com/gaming/articles/hidden-portal-gta-vice-city-222013951.html"
 featured: true
 especulacao: false
 cover_text: "Portal"
@@ -13,8 +16,14 @@ cover_prompt: "glowing neon portal in a dark power station at night, retro 2000s
 galeria:
   - busca: "Miami skyline night"
     legenda: "Miami à noite, a inspiração clássica de Vice City"
+    src: "/assets/img/posts/gta-vi-portal-secreto-vice-city-malibu-club-1.jpg"
+    credito: "Foto: Dori / CC BY-SA 3.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Downtown_Miami_skyline_20100305.jpg"
   - busca: "Florida power plant substation"
     legenda: "Usinas e subestações de energia, o cenário do mistério no jogo"
+    src: "/assets/img/posts/gta-vi-portal-secreto-vice-city-malibu-club-2.jpg"
+    credito: "Foto: DanTD / CC BY-SA 4.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Power_Substation_on_FL_121_in_Worthington_Springs.jpg"
 description: "Jogadores acharam um portal escondido em GTA VI que leva a uma versão retrô do Malibu Club de Vice City, com recompensas de Tommy Vercetti. Veja o que já se sabe."
 tags: [easter-eggs, vice-city, portal, tommy-vercetti, malibu-club, gta-vi]
 fontes:
