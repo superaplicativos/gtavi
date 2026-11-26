@@ -2,6 +2,9 @@
 title: "GTA VI: palhaço assassino no elevador e uma piada com The Last of Us entre os novos easter eggs"
 date: 2026-11-26 12:30:00 -0300
 categoria: easter-eggs
+cover: "/assets/img/posts/gta-vi-palhaco-elevador-haymarket-last-of-us-easter-egg.jpg"
+cover_credit: "Imagem: gamerant.com"
+cover_credit_url: "https://gamerant.com/gta-6-it-the-clown-easter-egg-secret-location-find/"
 featured: false
 especulacao: false
 cover_text: "Palhaço"
@@ -14,8 +17,14 @@ galeria:
   - pagina: "https://www.thegamer.com/gta-6-we-came-together-the-last-of-us-easter-egg/"
     fonte: "TheGamer"
     legenda: "A caixa do jogo falso na loja Game Horde"
+    src: "/assets/img/posts/gta-vi-palhaco-elevador-haymarket-last-of-us-easter-egg-1.jpg"
+    credito: "Imagem: TheGamer"
+    credito_url: "https://www.thegamer.com/gta-6-we-came-together-the-last-of-us-easter-egg/"
   - busca: "Miami Beach Ocean Drive night"
     legenda: "As noites de Vice Beach têm segredos que só aparecem de madrugada"
+    src: "/assets/img/posts/gta-vi-palhaco-elevador-haymarket-last-of-us-easter-egg-2.jpg"
+    credito: "Foto: Photograph: Radomianin / Public domain via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg"
 description: "Dois easter eggs novos de GTA VI: um palhaço assassino inspirado em IT que aparece num elevador de madrugada e um jogo falso que zoma The Last of Us. Veja onde achar."
 tags: [easter-eggs, palhaco, it, last-of-us, vice-beach, gta-vi]
 fontes:
