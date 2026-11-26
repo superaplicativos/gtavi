@@ -1,7 +1,9 @@
 # Faixa de "Urgente" que rola no topo do site. 4 a 8 itens curtos (até ~90 caracteres).
 # Atualize todo dia junto com o post novo. `url` é opcional (caminho relativo, sem baseurl).
-updated: "2026-11-25"
+updated: "2026-11-26"
 items:
+  - text: "Portal secreto em GTA VI leva ao Malibu Club do Vice City original"
+    url: /2026/11/26/gta-vi-portal-secreto-vice-city-malibu-club/
   - text: "Take-Two derruba projeto de fãs que tentava levar GTA VI para o PC"
     url: /2026/11/25/take-two-derruba-port-nao-oficial-gta-vi-pc/
   - text: "Primeiro patch de GTA VI traz 7 correções e nenhum conteúdo novo"
@@ -16,5 +18,3 @@ items:
     url: /2026/11/20/gta-vi-nota-99-metacritic-19-milhoes/
   - text: "Sensor Tower estima mais de 19 milhões de cópias vendidas no dia 1"
     url: /2026/11/20/gta-vi-nota-99-metacritic-19-milhoes/
-  - text: "61 cheats reportados, veja como desbloquear"
-    url: /2026/11/20/todos-os-cheats-gta-vi-como-desbloquear/
