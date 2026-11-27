@@ -2,6 +2,9 @@
 title: "GTA Online continua depois de GTA VI? O que a Take-Two já confirmou"
 date: 2026-11-27 07:00:00 -0300
 categoria: noticias
+cover: "/assets/img/posts/gta-online-continua-depois-gta-vi-o-que-take-two-confirmou.jpg"
+cover_credit: "Imagem: Beebom"
+cover_credit_url: "https://beebom.com/take-two-confirms-support-for-gta-online-after-gta-6-launch/"
 featured: true
 especulacao: false
 cover_text: "Online"
@@ -14,8 +17,14 @@ galeria:
   - pagina: "https://www.pcgamesn.com/grand-theft-auto-vi/gta-online-supported-new-version"
     fonte: "PCGamesN"
     legenda: "A cobertura do PCGamesN sobre o futuro do GTA Online"
+    src: "/assets/img/posts/gta-online-continua-depois-gta-vi-o-que-take-two-confirmou-1.jpg"
+    credito: "Imagem: PCGamesN"
+    credito_url: "https://www.pcgamesn.com/grand-theft-auto-vi/gta-online-supported-new-version"
   - busca: "Miami Beach Ocean Drive"
     legenda: "Miami Beach, uma das inspirações reais para o cenário de GTA VI"
+    src: "/assets/img/posts/gta-online-continua-depois-gta-vi-o-que-take-two-confirmou-2.jpg"
+    credito: "Foto: Photograph: Radomianin / Public domain via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg"
 description: "GTA VI chegou só com o modo história. E o GTA Online de hoje? Veja o que a Take-Two garantiu, o que ainda não foi dito e o que é só rumor sobre o online do novo jogo."
 tags: [gta-online, take-two, multiplayer, gta-vi, rockstar]
 fontes:
