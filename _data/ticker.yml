@@ -1,7 +1,9 @@
 # Faixa de "Urgente" que rola no topo do site. 4 a 8 itens curtos (até ~90 caracteres).
 # Atualize todo dia junto com o post novo. `url` é opcional (caminho relativo, sem baseurl).
-updated: "2026-11-26"
+updated: "2026-11-27"
 items:
+  - text: "GTA Online segue com suporte após GTA VI, diz a Take-Two; online novo sem data"
+    url: /2026/11/27/gta-online-continua-depois-gta-vi-o-que-take-two-confirmou/
   - text: "Palhaço assassino e piada com The Last of Us: novos easter eggs de GTA VI"
     url: /2026/11/26/gta-vi-palhaco-elevador-haymarket-last-of-us-easter-egg/
   - text: "Portal secreto em GTA VI leva ao Malibu Club do Vice City original"
@@ -16,5 +18,3 @@ items:
     url: /2026/11/22/gta-vi-xbox-glitch-quick-resume-60-fps/
   - text: "Guia: como ganhar dinheiro rápido no começo de GTA VI"
     url: /2026/11/21/como-ganhar-dinheiro-rapido-gta-vi/
-  - text: "GTA VI estreia com nota 99 no Metacritic e empata recorde histórico"
-    url: /2026/11/20/gta-vi-nota-99-metacritic-19-milhoes/
