@@ -2,6 +2,9 @@
 title: "GTA VI: ovo no topo de uma torre de rádio esconde uma cutscene secreta"
 date: 2026-11-28 07:08:00 -0300
 categoria: easter-eggs
+cover: "/assets/img/posts/gta-vi-easter-egg-ovo-torre-cutscene-secreta.jpg"
+cover_credit: "Imagem: IBTimes"
+cover_credit_url: "https://www.ibtimes.co.uk/gta-6-player-discovers-literal-easter-egg-leonida-1833342"
 featured: true
 especulacao: false
 cover_text: "Ovo"
@@ -13,8 +16,13 @@ cover_prompt: "a tall radio tower at golden hour in a humid subtropical landscap
 galeria:
   - busca: "Florida radio tower sunset"
     legenda: "Torres de rádio altas fazem parte da paisagem da Flórida, que inspira Leonida"
+    src: "/assets/img/posts/gta-vi-easter-egg-ovo-torre-cutscene-secreta-1.jpg"
+    credito: "Imagem ilustrativa gerada por IA"
   - busca: "Everglades wetlands Florida"
     legenda: "Os pântanos da Flórida, inspiração para o sul de Leonida"
+    src: "/assets/img/posts/gta-vi-easter-egg-ovo-torre-cutscene-secreta-2.jpg"
+    credito: "Foto: AndrewKPepper / CC BY-SA 4.0 via Wikimedia Commons"
+    credito_url: "https://commons.wikimedia.org/wiki/File:Everglades_01.jpg"
 description: "Jogadores acharam um ninho com ovos coloridos no topo de uma torre de rádio em GTA VI. Jogar um ovo lá de cima dispara uma cutscene curta. Veja onde fica e o que ainda não foi confirmado."
 tags: [easter-eggs, ovo, torre-de-radio, vice-dale, cutscene, gta-vi]
 fontes:
