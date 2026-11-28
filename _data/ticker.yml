@@ -1,7 +1,9 @@
 # Faixa de "Urgente" que rola no topo do site. 4 a 8 itens curtos (até ~90 caracteres).
 # Atualize todo dia junto com o post novo. `url` é opcional (caminho relativo, sem baseurl).
-updated: "2026-11-27"
+updated: "2026-11-28"
 items:
+  - text: "Ovo no topo de torre de rádio esconde cutscene secreta em GTA VI"
+    url: /2026/11/28/gta-vi-easter-egg-ovo-torre-cutscene-secreta/
   - text: "GTA Online segue com suporte após GTA VI, diz a Take-Two; online novo sem data"
     url: /2026/11/27/gta-online-continua-depois-gta-vi-o-que-take-two-confirmou/
   - text: "Palhaço assassino e piada com The Last of Us: novos easter eggs de GTA VI"
@@ -16,5 +18,3 @@ items:
     url: /2026/11/23/take-two-confirma-3-79-bilhoes-gta-vi-primeiro-dia/
   - text: "Glitch no Xbox Series X destrava FPS de GTA VI, mas acelera o jogo"
     url: /2026/11/22/gta-vi-xbox-glitch-quick-resume-60-fps/
-  - text: "Guia: como ganhar dinheiro rápido no começo de GTA VI"
-    url: /2026/11/21/como-ganhar-dinheiro-rapido-gta-vi/
